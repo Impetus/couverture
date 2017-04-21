@@ -1,0 +1,6 @@
+com.codecoverage.model
+com.codecoverage.parser
+com.codecoverage.plugin
+com.codecoverage.runner
+com.codecoverage.sensor
+com.codecoverage.widget
