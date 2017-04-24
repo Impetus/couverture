@@ -1,0 +1,17 @@
+com\codecoverage\model\LogEntry.class
+com\codecoverage\plugin\USSCCMetrics.class
+com\codecoverage\parser\CodeCoverage.class
+com\codecoverage\model\Coverage.class
+com\codecoverage\parser\SVNCodeCoverage.class
+com\codecoverage\runner\RunCodeCoverage$Finder.class
+com\codecoverage\widget\USSCCRubyWidget.class
+com\codecoverage\parser\ClearcaseCodeCoverage.class
+com\codecoverage\widget\USSCCFooter.class
+com\codecoverage\sensor\USSCCSensor.class
+com\codecoverage\runner\RunCodeCoverage.class
+com\codecoverage\parser\SimpleGITCodeCoverage.class
+com\codecoverage\plugin\USSCCPlugin.class
+com\codecoverage\runner\MavenCoberturaRunner.class
+com\codecoverage\model\BlameEntry.class
+com\codecoverage\parser\SVNBlameStax.class
+com\codecoverage\runner\ComputeSimpleUSCoverage.class
