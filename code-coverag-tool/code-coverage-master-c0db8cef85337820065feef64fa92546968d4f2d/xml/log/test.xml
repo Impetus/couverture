@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log>
+<logentry
+   revision="1">
+<author>manish.manker</author>
+<date>2015-05-27T14:53:32.238299Z</date>
+<paths>
+<path
+   kind="file"
+   action="A">/.classpath</path>
+<path
+   kind="dir"
+   action="A">/target/classes/META-INF/maven/g1</path>
+<path
+   kind="dir"
+   action="A">/src/test/java/com/mkyong/core</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/frame-sourcefiles-com.mkyong.core.html</path>
+<path
+   kind="dir"
+   action="A">/src/test/java/com</path>
+<path
+   kind="dir"
+   action="A">/src/test</path>
+<path
+   kind="file"
+   action="A">/target/generated-classes/cobertura/META-INF/maven/g1/a1/pom.properties</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/coverage.xml</path>
+<path
+   kind="dir"
+   action="A">/src/main</path>
+<path
+   kind="file"
+   action="A">/target/generated-classes/cobertura/META-INF/maven/g1/a1/pom.xml</path>
+<path
+   kind="dir"
+   action="A">/target/generated-classes/cobertura/com/mkyong/core</path>
+<path
+   kind="dir"
+   action="A">/target/generated-classes</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/com.mkyong.core.IdentityUtilities.html</path>
+<path
+   kind="file"
+   action="A">/target/test-classes/com/mkyong/core/TestApp1.class</path>
+<path
+   kind="dir"
+   action="A">/src/test/resources</path>
+<path
+   kind="dir"
+   action="A">/target/test-classes/com/mkyong</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/css/sortabletable.css</path>
+<path
+   kind="file"
+   action="A">/src/test/java/com/mkyong/core/TestApp1.java</path>
+<path
+   kind="dir"
+   action="A">/target/generated-classes/cobertura/com</path>
+<path
+   kind="file"
+   action="A">/target/maven-archiver/pom.properties</path>
+<path
+   kind="dir"
+   action="A">/target/classes</path>
+<path
+   kind="dir"
+   action="A">/target</path>
+<path
+   kind="dir"
+   action="A">/src</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/css/tooltip.css</path>
+<path
+   kind="dir"
+   action="A">/target/site</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/index.html</path>
+<path
+   kind="file"
+   action="A">/target/surefire-reports/com.mkyong.core.TestApp1.txt</path>
+<path
+   kind="file"
+   action="A">/target/surefire-reports/com.mkyong.core.TestApp2.txt</path>
+<path
+   kind="dir"
+   action="A">/target/test-classes</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/com.mkyong.core.Person.html</path>
+<path
+   kind="dir"
+   action="A">/target/classes/META-INF/maven/g1/a1</path>
+<path
+   kind="file"
+   action="A">/target/generated-classes/cobertura/com/mkyong/core/App.class</path>
+<path
+   kind="dir"
+   action="A">/target/classes/com/mkyong</path>
+<path
+   kind="dir"
+   action="A">/target/surefire-reports</path>
+<path
+   kind="dir"
+   action="A">/src/main/java/com/mkyong/core</path>
+<path
+   kind="file"
+   action="A">/src/main/java/com/mkyong/core/App.java</path>
+<path
+   kind="file"
+   action="A">/target/generated-classes/cobertura/com/mkyong/core/IdentityUtilities.class</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/js/popup.js</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/com.mkyong.core.App.html</path>
+<path
+   kind="dir"
+   action="A">/src/main/java/com</path>
+<path
+   kind="dir"
+   action="A">/target/cobertura</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/frame-summary-com.mkyong.core.html</path>
+<path
+   kind="dir"
+   action="A">/target/site/cobertura</path>
+<path
+   kind="dir"
+   action="A">/target/generated-classes/cobertura/META-INF/maven/g1/a1</path>
+<path
+   kind="file"
+   action="A">/src/test/java/com/mkyong/core/TestApp2.java</path>
+<path
+   kind="file"
+   action="A">/.project</path>
+<path
+   kind="file"
+   action="A">/target/test-classes/com/mkyong/core/PersonTest.class</path>
+<path
+   kind="dir"
+   action="A">/target/generated-classes/cobertura/com/mkyong</path>
+<path
+   kind="file"
+   action="A">/target/classes/META-INF/maven/g1/a1/pom.properties</path>
+<path
+   kind="file"
+   action="A">/target/a1-0.0.1-SNAPSHOT.jar</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/frame-packages.html</path>
+<path
+   kind="dir"
+   action="A">/target/classes/META-INF/maven</path>
+<path
+   kind="file"
+   action="A">/target/classes/META-INF/MANIFEST.MF</path>
+<path
+   kind="dir"
+   action="A">/target/site/cobertura/js</path>
+<path
+   kind="file"
+   action="A">/src/main/java/com/mkyong/core/Person.java</path>
+<path
+   kind="dir"
+   action="A">/target/classes/com/mkyong/core</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/frame-sourcefiles.html</path>
+<path
+   kind="file"
+   action="A">/target/surefire-reports/TEST-com.mkyong.core.PersonTest.xml</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/images/blank.png</path>
+<path
+   kind="file"
+   action="A">/target/surefire-reports/com.mkyong.core.PersonTest.txt</path>
+<path
+   kind="dir"
+   action="A">/target/classes/com</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/images/upsimple.png</path>
+<path
+   kind="file"
+   action="A">/target/classes/com/mkyong/core/Person.class</path>
+<path
+   kind="dir"
+   action="A">/target/test-classes/com/mkyong/core</path>
+<path
+   kind="dir"
+   action="A">/target/surefire</path>
+<path
+   kind="dir"
+   action="A">/target/generated-classes/cobertura/META-INF/maven</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/help.html</path>
+<path
+   kind="file"
+   action="A">/src/main/java/com/mkyong/core/IdentityUtilities.java</path>
+<path
+   kind="file"
+   action="A">/target/generated-classes/cobertura/META-INF/MANIFEST.MF</path>
+<path
+   kind="file"
+   action="A">/.settings/org.eclipse.jdt.core.prefs</path>
+<path
+   kind="dir"
+   action="A">/target/test-classes/com</path>
+<path
+   kind="dir"
+   action="A">/.settings</path>
+<path
+   kind="file"
+   action="A">/.settings/org.eclipse.m2e.core.prefs</path>
+<path
+   kind="file"
+   action="A">/target/test-classes/com/mkyong/core/TestApp2.class</path>
+<path
+   kind="file"
+   action="A">/target/classes/com/mkyong/core/App.class</path>
+<path
+   kind="dir"
+   action="A">/target/generated-classes/cobertura/META-INF/maven/g1</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/css/main.css</path>
+<path
+   kind="dir"
+   action="A">/target/classes/META-INF</path>
+<path
+   kind="dir"
+   action="A">/src/main/resources</path>
+<path
+   kind="file"
+   action="A">/target/classes/com/mkyong/core/IdentityUtilities.class</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/css/help.css</path>
+<path
+   kind="dir"
+   action="A">/src/test/java</path>
+<path
+   kind="file"
+   action="A">/src/test/java/com/mkyong/core/PersonTest.java</path>
+<path
+   kind="file"
+   action="A">/target/generated-classes/cobertura/com/mkyong/core/Person.class</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/images/downsimple.png</path>
+<path
+   kind="file"
+   action="A">/target/cobertura/cobertura.ser</path>
+<path
+   kind="file"
+   action="A">/target/surefire-reports/TEST-com.mkyong.core.TestApp1.xml</path>
+<path
+   kind="file"
+   action="A">/pom.xml</path>
+<path
+   kind="file"
+   action="A">/target/surefire-reports/TEST-com.mkyong.core.TestApp2.xml</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/css/source-viewer.css</path>
+<path
+   kind="file"
+   action="A">/.settings/com.jaspersoft.studio.prefs</path>
+<path
+   kind="dir"
+   action="A">/target/generated-classes/cobertura/META-INF</path>
+<path
+   kind="dir"
+   action="A">/target/generated-classes/cobertura</path>
+<path
+   kind="file"
+   action="A">/pom.cober.mock.xml.bak</path>
+<path
+   kind="dir"
+   action="A">/target/site/cobertura/css</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/frame-summary.html</path>
+<path
+   kind="dir"
+   action="A">/src/test/java/com/mkyong</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/js/customsorttypes.js</path>
+<path
+   kind="dir"
+   action="A">/src/main/java/com/mkyong</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/js/stringbuilder.js</path>
+<path
+   kind="dir"
+   action="A">/target/site/cobertura/images</path>
+<path
+   kind="file"
+   action="A">/target/generated-classes/cobertura/cobertura.properties</path>
+<path
+   kind="file"
+   action="A">/target/site/cobertura/js/sortabletable.js</path>
+<path
+   kind="file"
+   action="A">/target/classes/META-INF/maven/g1/a1/pom.xml</path>
+<path
+   kind="dir"
+   action="A">/src/main/java</path>
+<path
+   kind="dir"
+   action="A">/target/maven-archiver</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="2">
+<author>manish.manker</author>
+<date>2015-05-28T05:24:40.993484Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/main/java/com/mkyong/core/App.java</path>
+</paths>
+<msg>US-1234: Changes</msg>
+</logentry>
+<logentry
+   revision="3">
+<author>manish.manker</author>
+<date>2015-05-28T13:12:42.086168Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/main/java/com/mkyong/core/IdentityUtilities.java</path>
+</paths>
+<msg>US-1236: Changes</msg>
+</logentry>
+<logentry
+   revision="4">
+<author>manish.manker</author>
+<date>2015-05-28T13:56:15.640365Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/main/java/com/mkyong/core/App.java</path>
+</paths>
+<msg>US-1226: Changes</msg>
+</logentry>
+<logentry
+   revision="5">
+<author>manish.manker</author>
+<date>2015-05-29T06:42:49.212283Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/main/java/com/mkyong/core/Person.java</path>
+</paths>
+<msg>US-1234: Changes</msg>
+</logentry>
+<logentry
+   revision="6">
+<author>manish.manker</author>
+<date>2015-05-29T12:17:24.580161Z</date>
+<paths>
+<path
+   kind="file"
+   action="M">/src/main/java/com/mkyong/core/IdentityUtilities.java</path>
+</paths>
+<msg>US-1234: Changes</msg>
+</logentry>
+</log>
