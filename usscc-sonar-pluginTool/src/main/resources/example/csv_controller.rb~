@@ -1,0 +1,11 @@
+require 'base64'
+require 'fileutils'
+
+class CSVReportController < ApplicationController
+
+  def get
+
+    send_file Rails.root.join('csv-file', '/home/impadmin/Public/DataFabric/coverage_result.csv'), :type => 'text/csv', :disposition => 'attachment'
+  end
+
+end

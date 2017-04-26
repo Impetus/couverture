@@ -1,0 +1,16 @@
+D:\ashishCodeProject\usscc-sonar-plugin-master-d11966ef3838d3039204bbbf513b27918941fc1a\src\main\java\com\codecoverage\plugin\USSCCMetrics.java
+D:\ashishCodeProject\usscc-sonar-plugin-master-d11966ef3838d3039204bbbf513b27918941fc1a\src\main\java\com\codecoverage\widget\USSCCFooter.java
+D:\ashishCodeProject\usscc-sonar-plugin-master-d11966ef3838d3039204bbbf513b27918941fc1a\src\main\java\com\codecoverage\model\BlameEntry.java
+D:\ashishCodeProject\usscc-sonar-plugin-master-d11966ef3838d3039204bbbf513b27918941fc1a\src\main\java\com\codecoverage\widget\USSCCRubyWidget.java
+D:\ashishCodeProject\usscc-sonar-plugin-master-d11966ef3838d3039204bbbf513b27918941fc1a\src\main\java\com\codecoverage\parser\SimpleGITCodeCoverage.java
+D:\ashishCodeProject\usscc-sonar-plugin-master-d11966ef3838d3039204bbbf513b27918941fc1a\src\main\java\com\codecoverage\model\Coverage.java
+D:\ashishCodeProject\usscc-sonar-plugin-master-d11966ef3838d3039204bbbf513b27918941fc1a\src\main\java\com\codecoverage\parser\CodeCoverage.java
+D:\ashishCodeProject\usscc-sonar-plugin-master-d11966ef3838d3039204bbbf513b27918941fc1a\src\main\java\com\codecoverage\runner\ComputeSimpleUSCoverage.java
+D:\ashishCodeProject\usscc-sonar-plugin-master-d11966ef3838d3039204bbbf513b27918941fc1a\src\main\java\com\codecoverage\runner\MavenCoberturaRunner.java
+D:\ashishCodeProject\usscc-sonar-plugin-master-d11966ef3838d3039204bbbf513b27918941fc1a\src\main\java\com\codecoverage\runner\RunCodeCoverage.java
+D:\ashishCodeProject\usscc-sonar-plugin-master-d11966ef3838d3039204bbbf513b27918941fc1a\src\main\java\com\codecoverage\parser\SVNBlameStax.java
+D:\ashishCodeProject\usscc-sonar-plugin-master-d11966ef3838d3039204bbbf513b27918941fc1a\src\main\java\com\codecoverage\parser\ClearcaseCodeCoverage.java
+D:\ashishCodeProject\usscc-sonar-plugin-master-d11966ef3838d3039204bbbf513b27918941fc1a\src\main\java\com\codecoverage\sensor\USSCCSensor.java
+D:\ashishCodeProject\usscc-sonar-plugin-master-d11966ef3838d3039204bbbf513b27918941fc1a\src\main\java\com\codecoverage\model\LogEntry.java
+D:\ashishCodeProject\usscc-sonar-plugin-master-d11966ef3838d3039204bbbf513b27918941fc1a\src\main\java\com\codecoverage\parser\SVNCodeCoverage.java
+D:\ashishCodeProject\usscc-sonar-plugin-master-d11966ef3838d3039204bbbf513b27918941fc1a\src\main\java\com\codecoverage\plugin\USSCCPlugin.java

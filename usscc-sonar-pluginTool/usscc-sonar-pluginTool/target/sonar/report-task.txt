@@ -1,0 +1,5 @@
+projectKey=org.codehaus.sonar.examples:sonar-usscc-plugin
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/org.codehaus.sonar.examples:sonar-usscc-plugin
+ceTaskId=AVuewQ3J-X5r0ufc2E-W
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVuewQ3J-X5r0ufc2E-W

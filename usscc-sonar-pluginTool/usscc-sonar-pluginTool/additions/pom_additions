@@ -1,0 +1,29 @@
+// Update the jacoco plugin entry in pom.xml
+
+<plugin>
+      <groupId>org.jacoco</groupId>
+      <artifactId>jacoco-maven-plugin</artifactId>
+      <version>${jacocoVersion}</version>
+      <executions>
+          <execution>
+	     <id>jacoco-initialize</id>
+             <goals>
+                 <goal>prepare-agent</goal>
+             </goals>
+             <phase>initialize</phase>
+	  </execution>
+   	  <execution>
+		<id>post-unit-test</id>
+		<phase>test</phase>
+		<goals>
+			<goal>report</goal>
+		</goals>
+		<configuration>
+			<!-- Sets the path to the file which contains the execution data. -->
+			<dataFile>${jacocoExecutionDataFile}</dataFile>
+			<!-- Sets the output directory for the code coverage report. -->
+			<outputDirectory>${project.reporting.outputDirectory}/jacoco-ut</outputDirectory>
+		</configuration>
+	 </execution>
+      </executions>
+</plugin>
