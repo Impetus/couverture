@@ -53,7 +53,7 @@ public class ComputeSimpleUSCoverage {
     private static final String CLASS = "class";
 	
 	/** The u SS not covered code. */
-	static Map<String, Set<String>> uSSNotCoveredCode = new HashMap();
+	static Map<String, Set<String>> USSNotCoveredCode = new HashMap();
 	
 	/** The not coverage list. */
 	static ArrayList<String> notCoverageList;
@@ -74,8 +74,9 @@ public class ComputeSimpleUSCoverage {
      * @return the overall coverage percentage 
      * @throws IOException Signals that an I/O exception has occurred.
      * 
-     * Step1: It creates a master list of lines in project which where code is covered or not
-     * Step2: Iterate over file name line no map and count covered lines and total lines to compute coverage percentage
+     * Step1: Parse all coverage xml in project to learn for each line in project, if it is covered by Junit or not
+     * Step2: Iterate over file name line no map passed as parameter and count covered lines and total lines changed 
+     * to finally compute coverage percentage for given user story
      * 
      */
     static String getOverallCoverage(Map<String, ArrayList<String>> fileLineNoMap, String userStory, String pathToCoverageXML) throws IOException {
@@ -94,7 +95,7 @@ public class ComputeSimpleUSCoverage {
             LOGGER.error(e);
         }
 
-        Double coverage ;
+        Double coverage = 0.0;
 
         for (Map.Entry<String, ArrayList<String>> entry : fileLineNoMap.entrySet()) {
             String fileName = entry.getKey();
@@ -108,16 +109,12 @@ public class ComputeSimpleUSCoverage {
                 }
             }
             fileName = trimFileName(fileName);
-			uSSNotCoveredCode.put(userStory+","+fileName, notCoveredList);
+			USSNotCoveredCode.put(userStory+","+fileName, notCoveredList);
         }
 
-        try {
-            coverage = (double) (totalHitsCount / totalLineCount) * 100;
-        } catch (Exception e) {
-            totalLineCount = 1;
-            coverage = (double) (totalHitsCount / totalLineCount) * 100;
-            LOGGER.error(e);
-        }
+        if (totalLineCount != 0)
+        	coverage = (double) (totalHitsCount / totalLineCount) * 100;
+
         String finalCov = new DecimalFormat("##.#").format(coverage);
         if (coverage.isNaN()) {
             finalCov = "0.0";
@@ -150,7 +147,7 @@ public class ComputeSimpleUSCoverage {
 	 */
 	public static Map<String, Set<String>> getNotCoveredCodeMap() {
 
-		return uSSNotCoveredCode;
+		return USSNotCoveredCode;
 	}
 
 	/**

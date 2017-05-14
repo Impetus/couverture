@@ -14,7 +14,7 @@ import com.codecoverage.model.BlameEntry;
 
 
 /**
- * The Class SVNBlameStax to persist the Blame information of a file for SVN.
+ * The Class SVNBlameStax to read Blame information of a file to determine what all lines changed in a give revision.
  */
 public class SVNBlameStax {
 	
@@ -26,6 +26,10 @@ public class SVNBlameStax {
 
 	/**
 	 * This method Persist blame information of a file for svn and this method take's three parameter and return a list.
+	 * This method read a file with blame information in xml format and create a list of BlameEntry object
+	 * Then, iterate the list of BlameEntry to check if there is a blame entry of given revision and file name, 
+	 * to capture the line number of this blame entry, 
+	 * as it is the line number in file for which changes are done for given revision/user story
 	 *
 	 * @param file the file
 	 * @param revision1 the revision 1

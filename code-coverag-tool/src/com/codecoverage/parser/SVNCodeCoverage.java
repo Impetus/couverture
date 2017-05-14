@@ -48,10 +48,11 @@ public class SVNCodeCoverage implements CodeCoverage {
     private boolean oneTimeWork = false;
 
     /**
-     *This method is used for check a fileName and if file is available then Write logs into file,this method take's a two parameter fileName and pathTosrc.
+     * This method is used to write xml formatted svn logs of the project root into a file
      *
      * @param pathToSrc the path to src
      * @param fileName the file name
+     * 
      */
     private void writeLogToFile(String pathToSrc, String fileName) {
         String s = null;
@@ -83,10 +84,11 @@ public class SVNCodeCoverage implements CodeCoverage {
     }
 
     /**
-     *This method return a list of logEntry and create a logEntry from logFile, it's take a one parameter .
+     * This method read svn log in xml format from file and create a list of LogEntry object for each log entry in xml
      *
      * @param fileName the file name
      * @return the list
+     * 
      */
     private List<LogEntry> createLogEntryFromLogFile(String fileName) throws NullPointerException  {
         logEntries = new ArrayList();
@@ -192,6 +194,12 @@ public class SVNCodeCoverage implements CodeCoverage {
 
     /* 
      * @see com.codecoverage.parser.CodeCoverage#getFileLineNoMap(java.lang.String, java.lang.String)
+     * 
+     * In its first time execution, write svn project logs to a file and create a list of logEntries
+     * From the list of log entries, create a map with revision as key and list of files as values.
+     * using above map create another map with file as key and list of line numbers changed for the given user story as value
+     * Returns the file line number map
+     * 
      */
     @Override
     public Map<String, ArrayList<String>> getFileLineNoMap(String pathToSrc, String userStory) {
@@ -222,7 +230,7 @@ public class SVNCodeCoverage implements CodeCoverage {
     }
     
     /**
-     * This method check a file if file is not available then create a new file and Gets the root path and return a string value and method take a one parameters of string java.
+     * This method writes the svn info as xml to a file to determine the root path of svn repository
      *
      * @param pathToSrc the path to src
      * @return the root path
@@ -266,8 +274,13 @@ public class SVNCodeCoverage implements CodeCoverage {
     }
 
     /* 
+     * This method takes path to src folder and a map with revision as key and list of files changed in that revision as value for each key
+     * It blames each of the file of that revision to determine the line numbers of the file changed for the given revision
+     * Since this revision is the one that is changed for the given user story
+     * we ultimately are able to build and return a map with file name as key and list of line number changed in the given file for a user story as value  
      * 
      * @see com.codecoverage.parser.CodeCoverage#computeFileLineNoMap(java.lang.String, java.util.Map)
+     * 
      */
     @Override
     public Map<String, ArrayList<String>> computeFileLineNoMap(String pathToSrc, Map<String, ArrayList<String>> revisionFilesMap) {

@@ -82,6 +82,14 @@ public class RunCodeCoverage {
 	 * @param args the arguments
 	 * @throws XMLStreamException the XML stream exception
 	 * @throws IOException Signals that an I/O exception has occurred.
+	 * 
+	 * Take User story list, target Project location as input
+	 * Step1: Determine if target project is using git or svn
+	 * Step2: Based on code repository find filenames and there line number changed for list of user stories entered
+	 * Step3: Read coverage xmls and know which lines in which class are junit covered
+	 * Step4: Based on Step 2 and 3 knowledge, computes the code coverage percent of each user story
+	 * Step5: Write Not covered lines of code for each class for each user story to a CSV file
+	 * 
 	 */
 	public static void main(String[] args) throws XMLStreamException,
 			IOException {
@@ -176,7 +184,9 @@ public class RunCodeCoverage {
 	 * Read coverage report XML from covertura or jacoco and return a path(s) to xml file as string.
 	 *
 	 * @param pathToProject the path to project
-	 * @return the string
+	 * @return a string of comma separated list of path to each coverage xmls within the project root. 
+	 *  
+	 * 
 	 */
 	public static String readCoverageXML(String pathToProject){
 		String pathToCoverageXML = pathToProject;
@@ -299,7 +309,7 @@ public class RunCodeCoverage {
 	}
 
 	/**
-	 * The Class Finder.
+	 * The Class Finder is a utility class to find a pattern of file in directory and sub directories
 	 */
 	public static class Finder extends SimpleFileVisitor<Path> {
 
