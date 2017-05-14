@@ -5,11 +5,14 @@ import java.util.Map;
 
 /**
  * The Interface CodeCoverage.
+ * It has two methods, namely getFileLineNoMap and computeFileLineNoMap
+ * 
  */
 public interface CodeCoverage {
 
     /**
-     * This method is use for Gets the file line no map it will take two parameter.
+     * To get map of file name as key and list of lines changed for user story provided as input parameter
+     * It takes two inputs, 1. Path to target project source folder and 2. The user story number to process 
      *
      * @param pathToSrc the path to src
      * @param userStory the user story

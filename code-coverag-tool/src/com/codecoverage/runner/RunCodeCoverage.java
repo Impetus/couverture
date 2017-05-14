@@ -24,8 +24,6 @@ import com.codecoverage.parser.CodeCoverage;
 import com.codecoverage.parser.SVNCodeCoverage;
 import com.codecoverage.parser.SimpleGITCodeCoverage;
 
-
-
 /*
  * 
  * Author: Saurabh Juneja
@@ -35,7 +33,7 @@ import com.codecoverage.parser.SimpleGITCodeCoverage;
  */
 
 /**
- * The Class RunCodeCoverage is main class this is used for start the execution for code coverage.
+ * The Class RunCodeCoverage is the main class this is used for starting the execution for getting code coverage specific to user story.
  *
  * @author saurabh.juneja
  */
@@ -59,7 +57,7 @@ public class RunCodeCoverage {
     
 
 	/** The user story. */
-static String userStory = "";
+    static String userStory = "";
 	
 	/** The path to src. */
 	static String pathToSrc = "";
@@ -77,7 +75,9 @@ static String userStory = "";
 	private static ArrayList<String> fileList = null;
 	
 	/**
-	 * The main method is a entry point method this method is used for start the execution .
+	 * The main method is a entry point method, this method is used for starting the execution.
+	 * It prompts for User STory Numbers, Project root directory Path with those user story checked in
+	 * It auto detects if the target project is using git or svn
 	 *
 	 * @param args the arguments
 	 * @throws XMLStreamException the XML stream exception
@@ -86,7 +86,9 @@ static String userStory = "";
 	public static void main(String[] args) throws XMLStreamException,
 			IOException {
 
-		LOGGER.debug("start of program");
+		LOGGER.debug("USSCC: User story specific code coverage tool");
+		
+		System.out.println("***** USSCC: User story specific code coverage tool *****");
 
 		Scanner scan = new Scanner(System.in);
 
@@ -153,18 +155,17 @@ static String userStory = "";
 		Map<String, String> resultCoverageMap = new HashMap();
 
 		while (userStories.length > count) {
-			if(coverage!=null)
-			{
-			Map<String, ArrayList<String>> m = coverage.getFileLineNoMap(
-					pathToSrc, userStories[count]);
-
-			System.out.println("Going to get " + coverageFor
-					+ " checked in files coverage for : \""
-					+ userStories[count] + "\"");
-			coveragePercent = ComputeSimpleUSCoverage.getOverallCoverage(m,
-					userStories[count], pathToCoverageXML);
-			resultCoverageMap.put(userStories[count], coveragePercent);
-			count++;
+			if(coverage!=null){
+				Map<String, ArrayList<String>> fileLineNoMap = coverage.getFileLineNoMap(
+						pathToSrc, userStories[count]);
+				LOGGER.debug("fileLineNoMap" + fileLineNoMap);
+				System.out.println("Going to get " + coverageFor
+						+ " checked in files coverage for : \""
+						+ userStories[count] + "\"");
+				coveragePercent = ComputeSimpleUSCoverage.getOverallCoverage(fileLineNoMap,
+						userStories[count], pathToCoverageXML);
+				resultCoverageMap.put(userStories[count], coveragePercent);
+				count++;
 			}
 		}
 		ComputeSimpleUSCoverage.writeToCSV(ComputeSimpleUSCoverage.getNotCoveredCodeMap());

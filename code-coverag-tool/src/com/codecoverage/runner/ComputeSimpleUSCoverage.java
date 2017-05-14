@@ -30,13 +30,10 @@ import com.codecoverage.model.Coverage;
 
 
 /**
- * The Class ComputeSimpleUSCoverage is used for  runcodeCoverage this class compute the  specific line for codeCoverage.
+ * The Class ComputeSimpleUSCoverage is used by runcodeCoverage to compute the code coverage percentage specific to user story.
  */
 public class ComputeSimpleUSCoverage {
 
-    /** The query. */
-    static String query = "select distinct (REVISION) from coverage.svn_log where message like ? ";
-    
     /** The total line count. */
     static float totalHitsCount = 0, totalLineCount = 0;
     
@@ -71,13 +68,17 @@ public class ComputeSimpleUSCoverage {
     /**
      * This method return the final coverage and print the total number of line and total hits and get all the overallCoverage and take a three parameter and throws IOException if something wrong.
      *
-     * @param m the m
-     * @param userStory the user story
-     * @param pathToCoverageXML the path to coverage XML
-     * @return the overall coverage
+     * @param fileLineNoMap the contains file as key and line number changed for the given user story in that file as value in the map
+     * @param userStory is the user story number for which we are going to calculate coverage percentage
+     * @param pathToCoverageXML is a comma separated list of file path to coverage.xml
+     * @return the overall coverage percentage 
      * @throws IOException Signals that an I/O exception has occurred.
+     * 
+     * Step1: It creates a master list of lines in project which where code is covered or not
+     * Step2: Iterate over file name line no map and count covered lines and total lines to compute coverage percentage
+     * 
      */
-    static String getOverallCoverage(Map<String, ArrayList<String>> m, String userStory, String pathToCoverageXML) throws IOException {
+    static String getOverallCoverage(Map<String, ArrayList<String>> fileLineNoMap, String userStory, String pathToCoverageXML) throws IOException {
 
         try {
 			if (coverageList.isEmpty()) {
@@ -95,12 +96,13 @@ public class ComputeSimpleUSCoverage {
 
         Double coverage ;
 
-        for (Map.Entry<String, ArrayList<String>> entry : m.entrySet()) {
+        for (Map.Entry<String, ArrayList<String>> entry : fileLineNoMap.entrySet()) {
             String fileName = entry.getKey();
 			Set<String> notCoveredList = new HashSet();
             List<String> lineNoList = entry.getValue();
             for (String lineNo : lineNoList) {
                 int hits = getCoverage(fileName, lineNo, pathToCoverageXML);
+                //Saurabh: comment -1 to add lines not in xml in csv result
                 if (!(hits == -1 || hits >0)) {
                     notCoveredList.add(lineNo);
                 }
