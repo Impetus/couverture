@@ -24,8 +24,9 @@ import org.apache.log4j.Logger;
 import com.codecoverage.model.Coverage;
 
 
+
 /**
- *  The Class ComputeSimpleUSCoverage is used for  runcodeCoverage this class compute the  specific line for codeCoverage.
+ * The Class ComputeSimpleUSCoverage is used by runcodeCoverage to compute the code coverage percentage specific to user story.
  */
 public class ComputeSimpleUSCoverage {
 
@@ -65,14 +66,19 @@ public class ComputeSimpleUSCoverage {
 	}
 
 	/**
-	 *  This method return the final coverage and print the total number of line and total hits and get all the overallCoverage and take a three parameter and throws IOException if something wrong.
-	 *
-	 * @param m the m
-	 * @param userStory the user story
-	 * @param pathToCoverageXML the path to coverage XML
-	 * @return the overall coverage
-	 * @throws IOException Signals that an I/O exception has occurred.
-	 */
+     * This method return the final coverage and print the total number of line and total hits and get all the overallCoverage and take a three parameter and throws IOException if something wrong.
+     *
+     * @param fileLineNoMap the contains file as key and line number changed for the given user story in that file as value in the map
+     * @param userStory is the user story number for which we are going to calculate coverage percentage
+     * @param pathToCoverageXML is a comma separated list of file path to coverage.xml
+     * @return the overall coverage percentage 
+     * @throws IOException Signals that an I/O exception has occurred.
+     * 
+     * Step1: Parse all coverage xml in project to learn for each line in project, if it is covered by Junit or not
+     * Step2: Iterate over file name line no map passed as parameter and count covered lines and total lines changed 
+     * to finally compute coverage percentage for given user story
+     * 
+     */
 	static String getOverallCoverage(Map<String, ArrayList<String>> m,
 			String userStory, String pathToCoverageXML)
 					throws IOException {
@@ -124,13 +130,12 @@ public class ComputeSimpleUSCoverage {
 		totalLineCount = 0;
 		return finalCov;
 	}
-	
 	/**
-	 * This method return a string value and trim filename for overall coverage code.
-	 *
-	 * @param fileName the file name
-	 * @return the string
-	 */
+     *This method return a string value and trim filename for overall coverage code.
+     *
+     * @param fileName the file name
+     * @return the string
+     */
 	private static String trimFileName(String fileName){
     	fileName = fileName.replace("\\", ".").replaceAll("/", ".");
     	String fileNameArray[] = fileName.split("\\.");
@@ -138,7 +143,7 @@ public class ComputeSimpleUSCoverage {
     }
 
 	/**
-	 * this method return a value which is not  covered in code.
+	 * This method return a value which is not  covered in code.
 	 *
 	 * @return the not covered code map
 	 */
@@ -148,11 +153,11 @@ public class ComputeSimpleUSCoverage {
 	}
 
 	/**
-	 * this method is use to Write the numbers of line in to CSV file this method show the user story , class name and show the line number those not covered and print the comment when CSV file was created successfully
+	 * This method is use to Write the numbers of line in to CSV file this method show the user story , class name and show the line number those not covered and print the comment when CSV file was created successfully
 	 *
 	 * @param mapToWrite the map to write
-	 * @param sonarHomepath the sonar homepath
 	 */
+	
 	public static void writeToCSV(Map<String, Set<String>> mapToWrite, String sonarHomepath) {
 
 		String key;
@@ -223,7 +228,7 @@ public class ComputeSimpleUSCoverage {
 
 
 	/**
-	 * This method return integer value and take a three parameters fileName ,hit lineNumber and pathToCoverageXML and show the covered line and get the coverage.
+	 *This method return integer value and take a three parameters fileName ,hit lineNumber and pathToCoverageXML and show the covered line and get the coverage.
 	 *
 	 * @param fileName the file name
 	 * @param lineNumber the line number
@@ -260,22 +265,22 @@ public class ComputeSimpleUSCoverage {
 	}
 
 	/**
-	 * This method return true if lineNumber is equals to the getlineNumber Checks if is line covered.
-	 *
-	 * @param lineNumber the line number
-	 * @param coverage the coverage
-	 * @return the boolean
-	 */
+     *This method return true if lineNumber is equals to the getlineNumber Checks if is line covered.
+     *
+     * @param lineNumber the line number
+     * @param coverage the coverage
+     * @return the boolean
+     */
 	private static Boolean isLineCovered(String lineNumber, Coverage coverage) {
 		return lineNumber.equals(coverage.getLineNumber());
 	}
 
 	/**
-	 * This method return the the list of coverage and take a one parameters and Gets the coverage list.
-	 *
-	 * @param pathToCoverageXML the path to coverage XML
-	 * @return the coverage list
-	 */
+     *this method return the the list of coverage and take a one parameters and Gets the coverage list.
+     *
+     * @param pathToCoverageXML the path to coverage XML
+     * @return the coverage list
+     */
 	static List<Coverage> getCoverageList(String pathToCoverageXML) {
 
 		List<Coverage> coverageList = new ArrayList();
@@ -352,11 +357,11 @@ public class ComputeSimpleUSCoverage {
 	}
 
 	/**
-	 *This method the return the list of coverage and take a  one parameters and Gets the coverage list jacoco.
-	 *
-	 * @param pathToCoverageXML the path to coverage XML
-	 * @return the coverage list ja co co
-	 */
+     *This method the return the list of coverage and take a  one parameters and Gets the coverage list jacoco.
+     *
+     * @param pathToCoverageXML the path to coverage XML
+     * @return the coverage list ja co co
+     */
 	static List<Coverage> getCoverageListJaCoCo(String pathToCoverageXML) {
 
 		List<Coverage> coverageList = new ArrayList();

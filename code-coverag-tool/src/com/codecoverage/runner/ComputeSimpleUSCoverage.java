@@ -129,7 +129,7 @@ public class ComputeSimpleUSCoverage {
     }
     
     /**
-     * this method return a string value and trim filename for overall coverage code.
+     *This method return a string value and trim filename for overall coverage code.
      *
      * @param fileName the file name
      * @return the string
@@ -141,7 +141,7 @@ public class ComputeSimpleUSCoverage {
     }
 
 	/**
-	 *  this method return a value which is not  covered in code.
+	 * This method return a value which is not  covered in code.
 	 *
 	 * @return the not covered code map
 	 */

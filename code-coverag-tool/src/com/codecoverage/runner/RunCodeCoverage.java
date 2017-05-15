@@ -357,7 +357,7 @@ public class RunCodeCoverage {
 
 		// Invoke the pattern matching
 		/* 
-		 * this method take a path and basicFileAttributes parameter and this method invoke the pattern matching for each file and return a filevisitResult.
+		 * This method take a path and basicFileAttributes parameter and this method invoke the pattern matching for each file and return a filevisitResult.
 		 * @see java.nio.file.SimpleFileVisitor#visitFile(java.lang.Object, java.nio.file.attribute.BasicFileAttributes)
 		 */
 		// method on each file.
@@ -370,7 +370,7 @@ public class RunCodeCoverage {
 		// Invoke the pattern matching
 		
 		/* 
-		 * this method take a path and basicFileAttributes parameter and this method invoke the pattern matching for each directory and return a filevisitResult.
+		 * This method take a path and basicFileAttributes parameter and this method invoke the pattern matching for each directory and return a filevisitResult.
 		 * @see java.nio.file.SimpleFileVisitor#preVisitDirectory(java.lang.Object, java.nio.file.attribute.BasicFileAttributes)
 		 */
 		// method on each directory.

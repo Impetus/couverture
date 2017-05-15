@@ -14,9 +14,18 @@ import java.util.Set;
 
 import org.apache.log4j.Logger;
 
-
-/**
- * The Class SimpleGITCodeCoverage used for get the git code coverage.
+/*
+ * Author: Saurabh Juneja
+ * Entry Method: getFileLineNoMap
+ * 		Step 1: git log and grep the user story number to find revision list
+ * 		output: revision list
+ * 		Step 2: call getRevisionFileMap(revision list)
+ * 			Step 2.1: git show command for each revision, to get List of file names changed in this revision
+ * 			Output: list(revision, list of file names changed in this revision)
+ * 		Step 3: call computeFileLineNoMap(list(revision, list of file names changed in this revision))
+ * 			Step 3.1: git blame each file, create list of line no having us changes.
+ * 			Output: list(filename, list of line numbers)
+ * 			returned as m
  */
 public class SimpleGITCodeCoverage implements CodeCoverage {
 
@@ -27,8 +36,11 @@ public class SimpleGITCodeCoverage implements CodeCoverage {
     private static final String GIT_DIR = "git --git-dir ";
 
     /**
-     *This method is used for Gets the revision file map and it will take a two parameter and return the value as map and  throw a sqlException..
-     *
+     * This method is used to Get a map with revision as key and names of the file that were modified in that revision as map 
+     * It will take a two parameter and return the value as map and throw a sqlException.
+     * it uses command git show --pretty=format: --name-only <revision number> as command as raw data to get the required information
+     * it only process the .java file whose name does not end with Test
+     * 
      * @param pathToProject the path to project
      * @param revisionList the revision list
      * @return the revision file map
@@ -69,9 +81,12 @@ public class SimpleGITCodeCoverage implements CodeCoverage {
         }
         return revisionFileMap;
     }
-
-    /* (non-Javadoc)
+    /* 
      * @see com.codecoverage.parser.CodeCoverage#computeFileLineNoMap(java.lang.String, java.util.Map)
+     * It returns a map with file name and its line numbers changed in the given revision
+     * it takes a map with key as revision and file names as value, as an important input to process
+     * it blames each file and grep revision number over the blame result to get line number that were changed in given revision
+     * git blame --porcelain <file>
      */
     @Override
     public Map<String, ArrayList<String>> computeFileLineNoMap(String pathToProject, Map<String, ArrayList<String>> revisionFileNameMap) {
@@ -84,7 +99,8 @@ public class SimpleGITCodeCoverage implements CodeCoverage {
             Process p ;
             for (String file : fileList) {
             	//--line-porcelain 
-                commandToBeExecuted = GIT_DIR + pathToProject + "/.git " + "--work-tree=" + pathToProject + " blame --porcelain " + pathToProject + "/" + file;
+                commandToBeExecuted = GIT_DIR + pathToProject + "/.git " + "--work-tree=" + pathToProject + " blame -w --porcelain " + pathToProject + "/" + file;
+                
                 LOGGER.info("commandToBeExecuted=" + commandToBeExecuted);
                 try {
                     p = Runtime.getRuntime().exec(commandToBeExecuted);
@@ -122,8 +138,18 @@ public class SimpleGITCodeCoverage implements CodeCoverage {
         return fileLineNoMap;
     }
 
-    /* (non-Javadoc)
+    /* 
      * @see com.codecoverage.parser.CodeCoverage#getFileLineNoMap(java.lang.String, java.lang.String)
+     * To get map of file name as key and list of lines changed for user story provided as input parameter
+     * It takes two inputs, 1. Path to target project source folder and 2. The user story number to process
+     * to get the information, it does the following steps
+     * 1. generate git log for the project root directory
+     * 2. grep user story in the git log output
+     * 3. prepare a revision number list of all the checkins for given user story 
+     * 4. call getRevisionFileMap passing revision number list 
+     * 5. getRevisionFileMap returns revisionFileNameMap: a map with revision as key and list of files as value changed for that revision
+     * 6. finally we call computeFileLineNoMap passing revisionFileNameMap 
+     * 7. and return file name and its line no map back for further coverage calculation to the calling method.
      */
     @Override
     public Map<String, ArrayList<String>> getFileLineNoMap(String pathToSrc, String userStory) {

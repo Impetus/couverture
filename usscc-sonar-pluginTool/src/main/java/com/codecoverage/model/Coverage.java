@@ -30,7 +30,7 @@ public class Coverage {
     }
 
     /**
-     *  This method will  Gets the class name and return the String type of value.
+     * This method will Gets the class name and return a class name as type of String.
      *
      * @return the class name
      */
@@ -39,7 +39,7 @@ public class Coverage {
     }
 
     /**
-     * This method will Sets the class name and it will take a one parameter in type of String.
+     * This method will Sets the class name and it will take a one parameter as type of String.
      *
      * @param className the new class name
      */
@@ -48,7 +48,7 @@ public class Coverage {
     }
 
     /**
-     * This method will Gets the method and return the String type of value.
+     * This method will Gets the method and return a value  as type of String.
      *
      * @return the method
      */
@@ -57,7 +57,7 @@ public class Coverage {
     }
 
     /**
-     *This method will Sets the method and it will take a one parameter in type of String.
+     * This method will Sets the method and it will take a one parameter as type of String.
      *
      * @param method the new method
      */
@@ -66,7 +66,7 @@ public class Coverage {
     }
 
     /**
-     * This method will Gets the line number and return the String type of value.
+     *This method will Gets the line number and return a line number as type of String.
      *
      * @return the line number
      */
@@ -75,7 +75,7 @@ public class Coverage {
     }
 
     /**
-     * This method will Sets the line number and it will take a one parameter in type of String.
+     *This method will Sets the line number and it will take a one parameter as type of String.
      *
      * @param lineNumber the new line number
      */
@@ -84,7 +84,7 @@ public class Coverage {
     }
 
     /**
-     * This method will Gets the hits and return the int type of value.
+     * This method will Gets the hits and return a hits  as type of int.
      *
      * @return the hits
      */
@@ -93,7 +93,7 @@ public class Coverage {
     }
 
     /**
-     * This method will Sets the hits and it will take a one parameter in type of int.
+     *  This method will Sets the hits and it will take a one parameter as type of int.
      *
      * @param hits the new hits
      */

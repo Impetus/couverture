@@ -26,7 +26,9 @@ import com.codecoverage.runner.RunCodeCoverage.Finder;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class RunCodeCoverage is used for compute the code for coverage.
+ * The Class RunCodeCoverage is the main class this is used for starting the execution for getting code coverage specific to user story.
+ *
+ * @author saurabh.juneja
  */
 public class RunCodeCoverage {
 
@@ -259,8 +261,9 @@ public class RunCodeCoverage {
 	}
 	
 	/**
-	 * The Class Finder.
+	 * The Class Finder is a utility class to find a pattern of file in directory and sub directories
 	 */
+	
 	public static class Finder extends SimpleFileVisitor<Path> {
 
 		/** The matcher. */
@@ -305,10 +308,11 @@ public class RunCodeCoverage {
 		}
 
 		// Invoke the pattern matching
-		/* (non-Javadoc)
-		 * @see java.nio.file.SimpleFileVisitor#visitFile(java.lang.Object, java.nio.file.attribute.BasicFileAttributes)
-		 */
-		// method on each file.
+				/* 
+				 * This method take a path and basicFileAttributes parameter and this method invoke the pattern matching for each file and return a filevisitResult.
+				 * @see java.nio.file.SimpleFileVisitor#visitFile(java.lang.Object, java.nio.file.attribute.BasicFileAttributes)
+				 */
+				// method on each file.
 		@Override
 		public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
 			find(file);
@@ -316,17 +320,19 @@ public class RunCodeCoverage {
 		}
 
 		// Invoke the pattern matching
-		/* (non-Javadoc)
-		 * @see java.nio.file.SimpleFileVisitor#preVisitDirectory(java.lang.Object, java.nio.file.attribute.BasicFileAttributes)
-		 */
-		// method on each directory.
+		
+				/* 
+				 * This method take a path and basicFileAttributes parameter and this method invoke the pattern matching for each directory and return a filevisitResult.
+				 * @see java.nio.file.SimpleFileVisitor#preVisitDirectory(java.lang.Object, java.nio.file.attribute.BasicFileAttributes)
+				 */
+				// method on each directory.
 		@Override
 		public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) {
 			find(dir);
 			return FileVisitResult.CONTINUE;
 		}
-
-		/* (non-Javadoc)
+		/* 
+		 *  this method take a path and IOException parameter and this method print the exception to related with IOException and return the fileVisitResult.
 		 * @see java.nio.file.SimpleFileVisitor#visitFileFailed(java.lang.Object, java.io.IOException)
 		 */
 		@Override

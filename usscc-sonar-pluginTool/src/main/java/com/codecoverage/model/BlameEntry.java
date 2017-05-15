@@ -23,7 +23,7 @@ public class BlameEntry {
     private String date;
 
     /**
-     * This method will  Gets the file name and return a file name in type of String.
+     *This method will Gets the file name and return a file name as type of String.
      *
      * @return the file name
      */
@@ -32,7 +32,7 @@ public class BlameEntry {
     }
 
     /**
-     * This method will Sets the file name and it will take a one parameter in type of String.
+     *This method will Sets the file name and it will take a one parameter as type of String.
      *
      * @param fileName the new file name
      */
@@ -49,7 +49,7 @@ public class BlameEntry {
     }
 
     /**
-     * This method will  Gets the author and return the String type of value.
+     *This method will Gets the author and return a author as type of String.
      *
      * @return the author
      */
@@ -58,7 +58,7 @@ public class BlameEntry {
     }
 
     /**
-     * This method will  Gets the date and return a date in type of String.
+     *This method will Gets the date and return a date as type of String..
      *
      * @return the date
      */
@@ -67,7 +67,7 @@ public class BlameEntry {
     }
 
     /**
-     * This method will  Sets the date and it will take a  one parameter in type of String.
+     *This method will Sets the date and it will take a one parameter as type of String.
      *
      * @param date the new date
      */
@@ -76,7 +76,7 @@ public class BlameEntry {
     }
 
     /**
-     * This method will  Sets the author and it will take a one parameter in type of String.
+     *This method will Sets the author and it will take a one parameter as type of String.
      *
      * @param author the new author
      */
@@ -85,7 +85,7 @@ public class BlameEntry {
     }
 
     /**
-     * This method will  Gets the revision and return the value in type of String.
+     *This method will Gets the revision and return a value  as type of String.
      *
      * @return the revision
      */
@@ -94,7 +94,7 @@ public class BlameEntry {
     }
 
     /**
-     * This method will  Sets the revision and it will take a one parameter in type of String.
+     *This method will Sets the revision and it will take a one parameter as type of String.
      *
      * @param revision the new revision
      */
@@ -103,7 +103,7 @@ public class BlameEntry {
     }
 
     /**
-     *This method will  Gets the line and return the value in type of String .
+     *This method will Gets the line and return line as type of String.
      *
      * @return the line
      */
@@ -112,7 +112,7 @@ public class BlameEntry {
     }
 
     /**
-     * This method will  Sets the line and it will take a one parameter in type of String.
+     *This method will Sets the line and it will take a one parameter as type of String.
      *
      * @param line the new line
      */

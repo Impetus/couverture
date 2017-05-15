@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
 
 
 /**
- * The Class MavenCoberturaRunner is used for run the command and copy one file into other file.
+ *  The Class MavenCoberturaRunner is used for run the command and copy one file into other file.
  */
 public class MavenCoberturaRunner {
     
@@ -28,11 +28,10 @@ public class MavenCoberturaRunner {
     }
 
     /**
-     *  This method return true or false and take a three parameters mvnDir,pathToSrc and codeCoverageTool and cover the current line of code and clean the mvn package and also covered the current line code .
+     * This method return true or false and take a three parameters mvnDir,pathToSrc and codeCoverageTool and cover the current line of code and clean the mvn package and also covered the current line code .
      *
      * @param mvnDir the mvn dir
      * @param pathToSrc the path to src
-     * @param os the os
      * @param codeCoverageTool the code coverage tool
      * @return true, if successful
      */

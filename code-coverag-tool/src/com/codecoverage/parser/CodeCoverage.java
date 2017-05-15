@@ -12,7 +12,7 @@ public interface CodeCoverage {
 
     /**
      * To get map of file name as key and list of lines changed for user story provided as input parameter
-     * It takes two inputs, 1. Path to target project source folder and 2. The user story number to process 
+     * It takes two inputs, 1. Path to target project source folder and 2. The user story number to process. 
      *
      * @param pathToSrc the path to src
      * @param userStory the user story

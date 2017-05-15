@@ -31,7 +31,7 @@ public class LogEntry {
     }
 
     /**
-     * this method will Gets the author and return a author  as type of String..
+     * This method will Gets the author and return a author  as type of String..
      *
      * @return the author
      */
@@ -40,7 +40,7 @@ public class LogEntry {
     }
 
     /**
-     * this method will Sets the author and it will take a one parameter as type of String.
+     * This method will Sets the author and it will take a one parameter as type of String.
      *
      * @param author the new author
      */
@@ -49,7 +49,7 @@ public class LogEntry {
     }
 
   /**
-   * this method will Gets the revision and return a value as type of String..
+   * This method will Gets the revision and return a value as type of String.
    *
    * @return the revision
    */
@@ -58,7 +58,7 @@ public class LogEntry {
     }
   
   /**
-   * this method will Sets the revision and it will take a one parameter as type of String.
+   * This method will Sets the revision and it will take a one parameter as type of String.
    *
    * @param revision the new revision
    */
@@ -67,7 +67,7 @@ public class LogEntry {
     }
 
     /**
-     *this method will Gets the msg and return a value as type of String.. 
+     *This method will Gets the msg and return a value as type of String. 
      *
      * @return the msg
      */
@@ -76,7 +76,7 @@ public class LogEntry {
     }
 
     /**
-     *this method will Sets the msg and it will take a one parameter as type of String.
+     *This method will Sets the msg and it will take a one parameter as type of String.
      *
      * @param msg the new msg
      */
@@ -85,7 +85,7 @@ public class LogEntry {
     }
     
     /**
-     *this method will Gets the paths and return a value as type of List..
+     *This method will Gets the paths and return a value as type of List.
      *
      * @return the paths
      */
@@ -96,7 +96,7 @@ public class LogEntry {
 
 
     /**
-     * this method will Sets the paths and it will take a one parameter as type of List.
+     * This method will Sets the paths and it will take a one parameter as type of List.
      *
      * @param paths the new paths
      */
