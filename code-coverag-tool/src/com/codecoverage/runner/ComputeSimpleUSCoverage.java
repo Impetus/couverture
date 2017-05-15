@@ -112,7 +112,7 @@ public class ComputeSimpleUSCoverage {
 			USSNotCoveredCode.put(userStory+","+fileName, notCoveredList);
         }
 
-        if (totalLineCount != 0)
+        if (totalLineCount > 0)
         	coverage = (double) (totalHitsCount / totalLineCount) * 100;
 
         String finalCov = new DecimalFormat("##.#").format(coverage);
