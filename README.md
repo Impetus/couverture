@@ -1,3 +1,11 @@
+
+There are two project here.
+  1:Code coverage tool(This is a statndalone application)
+  2:Sonar_usscc-plugin tool
+we are giving brief  introduction about both project.  
+  
+1: Sonar-usscc-plugin tool
+
 Overview:- 
 
          USSCC Tool calculates code coverage specific to the user stories we deliver.
@@ -10,9 +18,9 @@ Supported Tool with your Project and follow the below steps:
          
          2. Pre generate jacoco.xml or coverage.xml for your project
          
-         3. Tool is available as a Plugin to SonarQube. To generate sonar report with USSC tool follow these steps :
+         3. Tool is available as a Plugin to SonarQube. To generate sonar report with USSCC tool follow these steps :
 
-                  * Place USSC-plugin jar at sonarqube-X.X.X/extensions/plugins
+                  * Place USSCC-plugin jar at sonarqube-X.X.X/extensions/plugins
 
                   * Start SonarQube server
 
@@ -28,3 +36,9 @@ Supported Tool with your Project and follow the below steps:
              how to solve : please go to administration in sonar. and click on scm and set a scm properties scm=true.
              
          7:-See Coverage Result on SonarQube Dashboard.     
+         
+         
+         
+2:CodeCoverage Tool          
+
+
