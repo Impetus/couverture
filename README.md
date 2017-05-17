@@ -4,7 +4,7 @@ There are two project here.we are giving brief introduction about both project.w
 
 
 1. Sonar-usscc-plugin tool
-Overview:- 
+Overview-
 
          USSCC Tool calculates code coverage specific to the user stories we deliver.
          This gives a clear picture in terms of percentage of code coverage for each user story.
