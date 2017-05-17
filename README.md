@@ -1,5 +1,40 @@
-N«yªŞ·
-)®ˆŞrØ^­ìj· Šø§ºâyø§¶º¹Ëb¢v›¢ë[¢Øi®ˆŞrÜ!‰Èb²¯zvŞ–Œ5J‰Ú®ë,qÊeº§¶Š%Ø*yÊ/z¶ zÚ(•8b²+²Ö­Ö¥¢wš¦™bq«b¢}R¢v«ºËr™n‚)í¢‰N½êï‰ìI ‚NŠ%q©\ºV­zÇ(uç(½êÚë)yÈŸ‰Ëh¶®±êì¶ŠâzÌuéb½êÓ†+ Š÷¬iÉ^jºbrÛ«z)íz¹¬¡ú^­Ç§µ¨¡÷(uç(½êÚçè­æœ†ë®Ëh¯ 'v§qç(½êÚêŞ²émv‡¬‹`z×b–ë^w­†ë.jYr–Œ%zœÉÊyÊ/z¶ zŠè¶«ºÇ«²Ú+‰ë¢÷«j’ºšh®×NŠ%Â+aÊ‹«>º#yËZ×è–Z0¶›zZ0²×©³S‘ë.­ì¨ººk¢7œ¶)©•éÒZr‡(¢°¨mêíº¶š×+y«^%§(rŒf–ŠÜ¡·«¶êÚ±Ê/z¶ {¥ØúŞéŞ­«^§(rŒf–ŠÜ¢÷«j±šWè¯*.®šèç-İ:(–+½¨¥i¹^jÆ–è"Ú¢v«BæŞNˆêÚµë(ªëzš+·­…D’+h¢Wè–Z0¶¬zË^¦ÃåiÇ”I ‚¦[ ŠxÚ­«l¢v«ªæŞ]uÿ{^È¨Ïé–è"Ä­j»R¢v«BæŞ±êïz°v+Z³ëm¡Ö¬…º­Ø§²‰Ú¬lµªí¡û)®)ír‰ßŠ«z™n‚)ğŠØeŠËh~ë®Ëh®'¬Š{)®)í±Ê)xg§z¶­zÊ'jºŞ¦Ší~Šò¢êé®ˆŞrÜ"¶è–\"(šf§vkç²‰Ú®Ê'j¾š­è¶Ø§‚Ëœ†Ü©z‡Ş®º+Â§Áêîkç²‰Ú®Ê'j·(šf§vØ^Ÿ§yçm¢)ìµ©er‰ei¹Ş¶Ë›½êìŠ‰ì¡ûpj·“…êŞŠÉbLq©İ£	å¡§m†+,¡ûpj·¡¶Úlÿü0ÁÊ%•¦çzßİ£	å¡§lê'ò¢èzÛb.rr¥êzºè­Û«Šx,¢v«®éçz¶§j\¬ŠËay%Mr‰¦jwb±ì^rë^vf§ÊØ¦zÄ¨™ëb™ëêë¢¸Z¦—§±8^r‰çyËb¢y¢‚[zZ,µú+jj&z{l¢ØZµ«b™ê.¶‡º»Ûay%M±êïz·ÖŞ­æœ…ça£h²‰oz™^jÇ ¢Úvh§ŠËkjØ¨)ì¢v«jw\–'$¢{™©İ±ëZ±É©®Š^®Ø²Ç&¶»í'
-‹Ş­¨Eë.–Ú'J‰Ú­›x6¬…º­İ‚¡×‚¢÷«j“¢‰N½êï‰ìI ‚NŠ%q©\ºV­zÇ(uç(½êÚë)yÈŸ‰Ëh¶®±êì¶ŠâzÌuéb½êÓ†+ Š÷¬iÉ^jºbrÛ«z)íz¹¬¡ú^­Ç§µ¨¡÷(uç(½êÚçè­æœ†ë®Ëh¯ 'v§qç(½êÚêŞ²émv‡¬‹`z×b–ë^w­†ë.jYr–Œ%zœÉÊyÊ/z¶ zŠè¶«ºÇ«²Ú+‰ë¢÷«j’zÛ©jw_¢YhÁ·¥£(™ë.¦š+µçlµêE¢²Zr‡(ÔŸ¢·«ºyâaŠËh¢Yš‘ë.­èÚr‡(Æib²šŞ±éíjÛayú%–Œ"	hq«b¢x§Ê‹«š‡n•ë®øœ{ûZ®­şÈ­{øÚr‡(ÆiH~z-~‰e£Ş–Œ,µêlhÆ¤zØ^ç²Æ«É§]ŠØ¨È§¦‰±šV­±êï‰Ç¿¦‰±š\¨¹Æ§~)İ¶œ…©àzÈ§i×b¶*'±ú%uêâÚ(•´èéŞ­«^§(rŒf–»§¶›zZ0r‰¦jwlŠ|¨º¹¨vé^4ƒë\šùÜ•æ§r‰©ŠWƒ²H©Më-²Úîzkçr‰©ŠW«µë-
-‰©ŠW«zÊ.­Ç¬µë-Eë(º·²Ë«yø«z×¬¶Šà§(rˆÚr‡(™«Ş™n‚)ëzš+·`¨uà¨½êÚäè¢X¬jf¯zzk¢7œµÚšùâËZ–V§vØ^»§ŠÖ¬«Ú¦º#yËw!üj· zÛb.rr¥êzºè¯^Ÿ«ºy¯Ê'j»(ªÜ¢išÛaz|ç¶ˆ§²Ö¥•Ê%•¦çzÛ.n÷«²*'²‡íÁªŞN«z+%Šy0yÆ§vŒ'–†¶¬²‡íÁªŞ†Ûi³ÿğÃ(–V›ëvŒ'–†±©İ±ëm…êZ¶Ú®&›•à®ˆ+jab•ë¢YZl×­Jæïz»"¢p¥‰éíá'
-‹Ş­¨Eë.–Ú'r‰ì¢W
+There are two project here.we are giving brief introduction about both project.which is given below.
+1:Sonar_usscc-plugin tool 2:Code coverage tool(This is a statndalone application)
+1: Sonar-usscc-plugin tool
+Overview:-
+     USSCC Tool calculates code coverage specific to the user stories we deliver.
+     This gives a clear picture in terms of percentage of code coverage for each user story.
+     And hence coverage result does not get diluted with usually low legacy code coverage or other user stories coverage.   
+Supported Tool with your Project and follow the below steps:
+     1. Make sure your project implement Jacoco or Cobertura and create Jacoco.xml or coberturaâ€™s coverage.xml
+
+     2. Pre generate jacoco.xml or coverage.xml for your project
+
+     3. Tool is available as a Plugin to SonarQube. To generate sonar report with USSCC tool follow these steps :
+
+              * Place USSCC-plugin jar at sonarqube-X.X.X/extensions/plugins
+
+              * Start SonarQube server
+
+              * Add it as widget to dashboard in sonar. At start of sprint, configure plugin with list of user stories in sprint scope.
+
+              * Generate sonar report for your project with follwing command :
+                 mvn sonar:sonar
+
+     4. If we are getting such type of error when we run mvn sonar:sonar command.then we need to install collabnet subversion software.
+        There is link we can download this software     https://www.collab.net/downloads
+
+     6: if you geetting such type of error during sonar runner analysis the SVN command is executed many times. Sometimes an error happens. "The connection might be lost for a moment so that a timeout occurs and the SVN server can't be reached".
+         how to solve : please go to administration in sonar. and click on scm and set a scm properties scm=true.
+
+     7:-See Coverage Result on SonarQube Dashboard.     
+2:CodeCoverage Tool
+Overview:- USSCC Tool calculates code coverage specific to the user stories we deliver. This gives a clear picture in terms of percentage of code coverage for each user story. And hence coverage result does not get diluted with usually low legacy code coverage or other user stories coverage.
+Setup and follow below some supported step:
+For Jacoco: 1) Before running this tool, make sure jacoco.xml is present at the following location in your module: service/target/site/jacoco.xml If not, follow below steps : a. Make the necessary additions in pom.xml at service/pom.xml (you can find the changes in additions folder in tool)
+b. To generate jacoco.xml, run the below commands in your module(EDS,DF,etc):
+    mvn clean compile -DskipTests=true
+    mvn compiler:testCompile resources:testResources surefire:test org.jacoco:jacoco-maven-plugin:report.
+2) CodeCoverageTool is a maven project, do a mvn install and then run it as java project.
+3)If we are getting such type of error when we run mvn sonar: sonar command. then we need to install collabnet subversion software. There is link we can download this software https://www.collab.net/downloads and set the path variable C:\Program Files\CollabNet\Subversion Client
+4) See Coverage Result on console.
