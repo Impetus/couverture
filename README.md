@@ -1,9 +1,10 @@
-There are two project here.we are giving brief introduction about both project.which is given below.
+There are two project here. We are giving brief introduction about both project,which is given below.
 1.Sonar_usscc-plugin tool.
 2.Code coverage tool(This is a standalone application)
 
 
 1. Sonar-usscc-plugin tool
+
 Overview-
 
 USSCC Tool calculates code coverage specific to the user stories we deliver.
