@@ -59,7 +59,7 @@ b. To generate jacoco.xml, run the below commands in your module(EDS,DF,etc):
     
     mvn compiler:testCompile resources:testResources surefire:test org.jacoco:jacoco-maven-plugin:report.
 
-2. CodeCoverageTool is a maven project, do a mvn install and then run it as java project.
+2.CodeCoverageTool is a maven project, do a mvn install and then run it as java project.
 
 3.If we are getting such type of error when we run mvn sonar: sonar command. then we need to install collabnet subversion software. There is link we can download this software https://www.collab.net/downloads and set the path variable C:\Program Files\CollabNet\Subversion Client
 
