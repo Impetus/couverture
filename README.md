@@ -29,9 +29,10 @@ Supported Tool with your Project and follow the below steps:
 6. See Coverage Result on SonarQube Dashboard.     
 
 
-2. CodeCoverage Tool
 
 
+
+2:CodeCoverage Tool
 Overview-
 
 USSCC Tool calculates code coverage specific to the user stories we deliver.
