@@ -1,7 +1,6 @@
-There are two project here.
-  1:Code coverage tool(This is a statndalone application)
-  2:Sonar_usscc-plugin tool
-we are giving brief  introduction about both projec.which is given below.  
+There are two project here.we are giving brief  introduction about both projec.which is given below.  
+  1:Sonar_usscc-plugin tool
+  2:Code coverage tool(This is a statndalone application)
   
 1: Sonar-usscc-plugin tool
 
