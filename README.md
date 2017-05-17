@@ -39,7 +39,7 @@ Supported Tool with your Project and follow the below steps:
          
 2:CodeCoverage Tool     
 
-Overview: 
+Overview:- 
          USSCC Tool calculates code coverage specific to the user stories we deliver.
          This gives a clear picture in terms of percentage of code coverage for each user story.
          And hence coverage result does not get diluted with usually low legacy code coverage or other user stories coverage.   
