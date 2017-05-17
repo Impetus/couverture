@@ -30,11 +30,11 @@ For Jacoco :
           enter 2 for Jococo
           Note: if you want  code coverage cobertura press one or if you want  code coverage jococo press two.
 
-        3.If we are getting such type of error when we run mvn sonar: sonar command. then we need to install collabnet subversion software. There is link we can download this software 
+        4.If we are getting such type of error when we run mvn sonar: sonar command. then we need to install collabnet subversion software. There is link we can download this software 
                   https://www.collab.net/downloads
             and set the path variable C:\Program Files\CollabNet\Subversion Client
 
 
-        4. See Coverage Result on console.
+        5. See Coverage Result on console.
 
 
