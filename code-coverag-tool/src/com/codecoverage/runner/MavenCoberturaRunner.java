@@ -28,14 +28,16 @@ public class MavenCoberturaRunner {
     }
 
     /**
-     * This method return true or false and take a three parameters mvnDir,pathToSrc and codeCoverageTool and cover the current line of code and clean the mvn package and also covered the current line code .
-     *
+     *FUNCTIONS: This method return true or false and take a three parameters mvnDir,pathToSrc and codeCoverageTool and cover the current line of code and clean the mvn package and also covered the current line code .
+     *INPUTS:
      * @param mvnDir the mvn dir
      * @param pathToSrc the path to src
      * @param codeCoverageTool the code coverage tool
+     *OUTPUTS: 
      * @return true, if successful
+     * @throws InterruptedException 
      */
-    public static boolean run(String mvnDir, String pathToSrc, String codeCoverageTool) {
+    public static boolean run(String mvnDir, String pathToSrc, String codeCoverageTool) throws InterruptedException {
         Process p ;
         boolean flag = false;
         String sCurrentLine ;
@@ -43,19 +45,21 @@ public class MavenCoberturaRunner {
         String line;
         String dir ;
         if (mvnDir != null && pathToSrc != null) {
-            dir = mvnDir + "/bin/mvn ";
+            dir = mvnDir + "/bin/mvn.bat ";
             LOGGER.info("mvnDir=" + dir);
 
             if(codeCoverageTool.equals(JACOCO)){
                 commandToExecute = dir + "mvn clean package";
             } else {
-                commandToExecute = dir + " -f " + pathToSrc + "/pom.xml cobertura:cobertura -Dcobertura.report.format=xml";
+                commandToExecute = dir + " -f " + pathToSrc + "/pom.xml cobertura:cobertura -D cobertura.report.format=xml";
             }
 
         }
-        try {
-            p = Runtime.getRuntime().exec(commandToExecute);
-            BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        try { 
+              p = Runtime.getRuntime().exec(commandToExecute);
+             int i= p.waitFor();
+            System.out.println("exit value "+i);
+             BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
 
             BufferedReader stdError = new BufferedReader(new InputStreamReader(p.getErrorStream()));
             line=stdInput.readLine();   
@@ -74,11 +78,13 @@ public class MavenCoberturaRunner {
     }
 
     /**
-     * This method is used for read the contain from other and copy into the other and throws IOException went something happened wrong.
-     *
+     *FUNCTIONS: This method is used for read the contain from other and copy into the other and throws IOException went something happened wrong.
+     *INPUTS:
      * @param in the in
      * @param out the out
      * @throws IOException Signals that an I/O exception has occurred.
+     *OUTPUTS:
+     * void
      */
     static void copy(InputStream in, OutputStream out) throws IOException {
         while (true) {

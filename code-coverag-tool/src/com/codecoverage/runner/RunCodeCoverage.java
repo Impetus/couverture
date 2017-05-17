@@ -75,24 +75,27 @@ public class RunCodeCoverage {
 	private static ArrayList<String> fileList = null;
 	
 	/**
-	 * The main method is a entry point method, this method is used for starting the execution.
+	 *FUNCTIONS: The main method is a entry point method, this method is used for starting the execution.
 	 * It prompts for User STory Numbers, Project root directory Path with those user story checked in
 	 * It auto detects if the target project is using git or svn
-	 *
+	 *INPUTS:
 	 * @param args the arguments
 	 * @throws XMLStreamException the XML stream exception
 	 * @throws IOException Signals that an I/O exception has occurred.
-	 * 
+	 * OUTPUTS:
+	 *  void
+	 *NOTES:  
 	 * Take User story list, target Project location as input
 	 * Step1: Determine if target project is using git or svn
 	 * Step2: Based on code repository find filenames and there line number changed for list of user stories entered
 	 * Step3: Read coverage xmls and know which lines in which class are junit covered
 	 * Step4: Based on Step 2 and 3 knowledge, computes the code coverage percent of each user story
 	 * Step5: Write Not covered lines of code for each class for each user story to a CSV file
+	 * @throws InterruptedException 
 	 * 
 	 */
 	public static void main(String[] args) throws XMLStreamException,
-			IOException {
+			IOException, InterruptedException {
 
 		LOGGER.debug("USSCC: User story specific code coverage tool");
 		
@@ -181,14 +184,18 @@ public class RunCodeCoverage {
 	
 	/**
 	 * 
-	 * Read coverage report XML from covertura or jacoco and return a path(s) to xml file as string.
+	 *FUNCTIONS: Read coverage report XML from covertura or jacoco and return a path(s) to xml file as string.
 	 *
+	 *INPUTS:
 	 * @param pathToProject the path to project
-	 * @return a string of comma separated list of path to each coverage xmls within the project root. 
-	 *  
+	 *
+	 *OUTPUTS:
+	 * @return a string of comma separated list of path to each coverage xmls within the project root.
+	 * @throws InterruptedException 
+	 *   
 	 * 
 	 */
-	public static String readCoverageXML(String pathToProject){
+	public static String readCoverageXML(String pathToProject) throws InterruptedException{
 		String pathToCoverageXML = pathToProject;
 		Scanner scan = new Scanner(System.in);
 		if (pathToCoverageXML != null) {
@@ -332,9 +339,11 @@ public class RunCodeCoverage {
 
 		// Compares the glob pattern against
 		/**
-		 * This method take a path of file and find file name or directory name.
-		 *
+		 *FUNCTIONS: This method take a path of file and find file name or directory name.
+		 *INPUTS:
 		 * @param file the file
+		 *OUTPUTS:
+		 * void
 		 */
 		// the file or directory name.
 		void find(Path file) {
@@ -348,7 +357,9 @@ public class RunCodeCoverage {
 
 		// Prints the total number of
 		/**
-		 * This method print the total number of matches line.
+		 *FUNCTIONS: This method print the total number of matches line.
+		 *OUTPUTS:
+		 * void
 		 */
 		// matches to standard out.
 		void done() {
@@ -370,7 +381,7 @@ public class RunCodeCoverage {
 		// Invoke the pattern matching
 		
 		/* 
-		 * This method take a path and basicFileAttributes parameter and this method invoke the pattern matching for each directory and return a filevisitResult.
+		 *NOTES: This method take a path and basicFileAttributes parameter and this method invoke the pattern matching for each directory and return a filevisitResult.
 		 * @see java.nio.file.SimpleFileVisitor#preVisitDirectory(java.lang.Object, java.nio.file.attribute.BasicFileAttributes)
 		 */
 		// method on each directory.
@@ -381,7 +392,7 @@ public class RunCodeCoverage {
 		}
 
 		/* 
-		 *  this method take a path and IOException parameter and this method print the exception to related with IOException and return the fileVisitResult.
+		 *NOTES:  this method take a path and IOException parameter and this method print the exception to related with IOException and return the fileVisitResult.
 		 * @see java.nio.file.SimpleFileVisitor#visitFileFailed(java.lang.Object, java.io.IOException)
 		 */
 		@Override
