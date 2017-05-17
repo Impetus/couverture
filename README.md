@@ -64,6 +64,6 @@ b. To generate jacoco.xml, run the below commands in your module(EDS,DF,etc):
 3.If we are getting such type of error when we run mvn sonar: sonar command. then we need to install collabnet subversion software. There is link we can download this software https://www.collab.net/downloads and set the path variable C:\Program Files\CollabNet\Subversion Client
 
 
-4. See Coverage Result on console.
+4.See Coverage Result on console.
 
 
