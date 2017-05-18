@@ -1,11 +1,11 @@
 #  **There are two project here. We are giving brief introduction about both project,which is given below.**
 
-> 1. Sonar USSCC Plugin Tool.
+> A . Sonar USSCC Plugin Tool.
 
-> 2. Code Coverage Tool (A command line application)
+> B . Code Coverage Tool (A command line application)
 
 
-1. Sonar USSCC Plugin Tool.
+A. Sonar USSCC Plugin Tool.
 
 > ## Overview-
 
@@ -32,7 +32,7 @@
 
 
 
-22. CodeCoverage Tool
+B. CodeCoverage Tool
 
 ## Overview-
 
@@ -53,16 +53,37 @@
 > a. Make the necessary additions in pom.xml at service/pom.xml (you can find the changes in additions folder in tool)
 
 
-> b. To generate jacoco.xml, run the below commands in your module(EDS,DF,etc):
-    
->    mvn clean compile -DskipTests=true
-    
->   mvn compiler:testCompile resources:testResources surefire:test org.jacoco:jacoco-maven-plugin:report.
 
 > 2.CodeCoverageTool is a maven project, do a mvn install and then run it as java project.
 
-> 3.If we are getting such type of error when we run mvn sonar: sonar command. then we need to install collabnet subversion software. There is link we can download this software https://www.collab.net/downloads and set the path variable C:\Program Files\CollabNet\Subversion Client
 
-> 4. :+1:See Coverage Result on console.
+
+> 3. Go to the com.codecoverage.runner package and run to the RunCodeCoverage java class.
+
+>     You have get such type of output
+
+>      a.  Enter User Story Number, if multiple user Stories then please separate them       by comma (,)
+
+>      Note: Please Enter usscc number like US-1234. If you have two user story number like US-1235, Us-1234
+
+>      b.  After entered you have to give a project location  
+
+>      Like Enter SRC/Code Location
+
+>     Note: entered your location like D:\svnCheckout
+
+>      c.  After entered it will ask
+
+>      d.  Enter code coverage tool(Jococo/cobertura):
+
+>      enter 1 for Cobertura
+
+>      enter 2 for Jococo
+
+>      Note:  if you want to code coverage cobertura press one or if you want to code coverage jococo press two.
+
+> 4.If we are getting such type of error when we run mvn sonar: sonar command. then we need to install collabnet subversion software. There is link we can download this software https://www.collab.net/downloads and set the path variable C:\Program Files\CollabNet\Subversion Client
+
+> 5. :+1:See Coverage Result on console.
 
 
