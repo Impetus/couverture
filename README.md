@@ -49,38 +49,33 @@ B. CodeCoverage Tool
 
 > 1.Before running this tool, make sure jacoco.xml is present at the following location in your module: service/target/site/jacoco.xml If not, follow below steps :
 
-
 > a. Make the necessary additions in pom.xml at service/pom.xml (you can find the changes in additions folder in tool)
-
-
 
 > 2.CodeCoverageTool is a maven project, do a mvn install and then run it as java project.
 
+> 3.Go to the com.codecoverage.runner package and run to the RunCodeCoverage java class.
 
+>You have get such type of output
 
-> 3. Go to the com.codecoverage.runner package and run to the RunCodeCoverage java class.
+>a . Enter User Story Number, if multiple user Stories then please separate them       by comma (,)
 
->     You have get such type of output
+>Note: Please Enter usscc number like US-1234. If you have two user story number like US-1235, Us-1234
 
->      a.  Enter User Story Number, if multiple user Stories then please separate them       by comma (,)
+>b.  After entered you have to give a project location  
 
->      Note: Please Enter usscc number like US-1234. If you have two user story number like US-1235, Us-1234
+>Like Enter SRC/Code Location
 
->      b.  After entered you have to give a project location  
+>Note: entered your location like D:\svnCheckout
 
->      Like Enter SRC/Code Location
+> c.  After entered it will ask
 
->     Note: entered your location like D:\svnCheckout
+> d.  Enter code coverage tool(Jococo/cobertura):
 
->      c.  After entered it will ask
+> enter 1 for Cobertura
 
->      d.  Enter code coverage tool(Jococo/cobertura):
+> enter 2 for Jococo
 
->      enter 1 for Cobertura
-
->      enter 2 for Jococo
-
->      Note:  if you want to code coverage cobertura press one or if you want to code coverage jococo press two.
+> Note:  if you want to code coverage cobertura press one or if you want to code coverage jococo press two.
 
 > 4.If we are getting such type of error when we run mvn sonar: sonar command. then we need to install collabnet subversion software. There is link we can download this software https://www.collab.net/downloads and set the path variable C:\Program Files\CollabNet\Subversion Client
 
