@@ -1,15 +1,15 @@
 #  **There are two project here. We are giving brief introduction about both project,which is given below.**
 
-> 1. Sonar_usscc-plugin tool.
+> 1. Sonar USSCC Plugin Tool.
 
-> 2. Code coverage tool(This is a standalone application)
+> 2. Code Coverage Tool (A command line application)
 
 
-1. Sonar-usscc-plugin tool
+1. Sonar USSCC Plugin Tool.
 
 > ## Overview-
 
-> USSCC Tool calculates code coverage specific to the user stories we deliver.
+> Sonar USSCC Plugin Tool calculates code coverage specific to the user stories we deliver and show it over sonar dashboard.
 > This gives a clear picture in terms of percentage of code coverage for each user story.
 > And hence coverage result does not get diluted with usually low legacy code coverage or other user stories coverage.   
 
