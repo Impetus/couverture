@@ -39,7 +39,6 @@ B. USSCC Command line Tool
 >## Setup and follow below some supported step:
 
 
-> For Jacoco:
 
 
 > 1.   Before running this tool, make sure coverage xmls are present in the target folders like service/target/site/jacoco.xml If not, 
