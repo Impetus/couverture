@@ -2,7 +2,7 @@
 
 > A . USSCC Sonar Plug-in. (folder name: usscc-sonar-pluginTool)
 
-> B . USSCC Tool (folder name: code-coverag-tool. A command line application)
+> B . USSCC Command line Tool (folder name: code-coverag-tool)
 
 
 A. USSCC Sonar Plug-in.
@@ -29,13 +29,11 @@ A. USSCC Sonar Plug-in.
 
 
 
-B. CodeCoverage Tool
+B. USSCC Command line Tool
 
 ## Overview-
 
->USSCC Tool calculates code coverage specific to the user stories we deliver.
->This gives a clear picture in terms of percentage of code coverage for each user story.
->And hence coverage result does not get diluted with usually low legacy code coverage or other user stories coverage.
+>USSCC Tool is a command line version of USSCC Sonar Plug-in.
 
 
 >## Setup and follow below some supported step:
@@ -44,36 +42,10 @@ B. CodeCoverage Tool
 > For Jacoco:
 
 
-> 1.Before running this tool, make sure jacoco.xml is present at the following location in your module: service/target/site/jacoco.xml If not, follow below steps :
+> 1.   Before running this tool, make sure coverage xmls are present in the target folders like service/target/site/jacoco.xml If not, 
 
-> a. Make the necessary additions in pom.xml at service/pom.xml (you can find the changes in additions folder in tool)
+> 2.   To run the project, go to the com.codecoverage.runner package and run to the RunCodeCoverage java class.
 
-> 2.CodeCoverageTool is a maven project, do a mvn install and then run it as java project.
+> 3.   Enter information as prompted
 
-> 3.Go to the com.codecoverage.runner package and run to the RunCodeCoverage java class.
-
->You have get such type of output
-
->a . Enter User Story Number, if multiple user Stories then please separate them       by comma (,)
-
->Note: Please Enter usscc number like US-1234. If you have two user story number like US-1235, Us-1234
-
->b.  After entered you have to give a project location  
-
->Like Enter SRC/Code Location
-
->Note: entered your location like D:\svnCheckout
-
-> c.  After entered it will ask
-
-> d.  Enter code coverage tool(Jococo/cobertura):
-
-> enter 1 for Cobertura
-
-> enter 2 for Jococo
-
-> Note:  if you want to code coverage cobertura press one or if you want to code coverage jococo press two.
-
-> 4.If we are getting such type of error when we run mvn sonar: sonar command. then we need to install collabnet subversion software. There is link we can download this software https://www.collab.net/downloads and set the path variable C:\Program Files\CollabNet\Subversion Client
-
-> 5. :+1:See Coverage Result on console.
+> 4. :+1:See Coverage Result on console.
