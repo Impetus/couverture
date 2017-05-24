@@ -1,17 +1,19 @@
-#  **There are two project here. We are giving brief introduction about both project,which is given below.**
+> ## Overview-
 
-> A . USSCC Sonar Plug-in. (folder name: usscc-sonar-pluginTool)
+> USSCC Tool calculates code coverage specific to the user stories we deliver.
+> This gives a clear picture in terms of percentage of code coverage for each user story.
+> And hence coverage result does not get diluted with usually low legacy code coverage or other user stories coverage.   
 
-> B . USSCC Command line Tool (folder name: code-coverag-tool)
+> ## The tool is available in two forms:-
+
+> A. USSCC Sonar Plug-in. (folder name: usscc-sonar-pluginTool)
+
+> B. USSCC Command line Tool (folder name: code-coverag-tool)
 
 
 A. USSCC Sonar Plug-in.
 
-> ## Overview-
 
-> USSCC Sonar Plug-in Tool calculates code coverage specific to the user stories we deliver and show it over sonar dashboard.
-> This gives a clear picture in terms of percentage of code coverage for each user story.
-> And hence coverage result does not get diluted with usually low legacy code coverage or other user stories coverage.   
 
 > ## To run this tool with your Projects sonar setup, please follow the below steps:-
 > 1.   Make sure your project implement Jacoco or Cobertura and create Jacoco.xml or cobertura’s coverage.xml
