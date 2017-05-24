@@ -11,7 +11,7 @@
 > B. USSCC Command line Tool (folder name: code-coverag-tool)
 
 
-> A. USSCC Sonar Plug-in.
+A. USSCC Sonar Plug-in.
 
 
 
@@ -31,7 +31,7 @@
 
 
 
-> B. USSCC Command line Tool
+B. USSCC Command line Tool
 
 >USSCC Tool is a command line version of USSCC Sonar Plug-in.
 
