@@ -48,3 +48,5 @@ B. USSCC Command line Tool
 > 3.   Enter information as prompted
 
 > 4. :+1:See Coverage Result on console.
+
+For more details please go through presentation in USSCC_DOCUMENT\presentations
