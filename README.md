@@ -1,4 +1,4 @@
-> ## Overview-
+## Overview-
 
 > USSCC Tool calculates code coverage specific to the user stories we deliver.
 > This gives a clear picture in terms of percentage of code coverage for each user story.
@@ -11,7 +11,7 @@
 > B. USSCC Command line Tool (folder name: code-coverag-tool)
 
 
-A. USSCC Sonar Plug-in.
+> A. USSCC Sonar Plug-in.
 
 
 
@@ -31,9 +31,7 @@ A. USSCC Sonar Plug-in.
 
 
 
-B. USSCC Command line Tool
-
-## Overview-
+> B. USSCC Command line Tool
 
 >USSCC Tool is a command line version of USSCC Sonar Plug-in.
 
