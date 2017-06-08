@@ -16,3 +16,37 @@
 2017-04-19 14:31:01 DEBUG SVNCodeCoverage:219 - fileLineNoMap.toString(){/src/main/java/com/mkyong/core/App.java=[32], /src/test/java/com/mkyong/core/TestApp1.java=[11]}
 2017-04-19 14:31:01 INFO  ComputeSimpleUSCoverage:88 - calling getCoverageList
 2017-04-19 14:31:01 INFO  ComputeSimpleUSCoverage:284 - pathToProject in getCoverageList :: D:\my1/target/site/cobertura/coverage.xml
+2017-06-08 12:53:45 DEBUG RunCodeCoverage:100 - USSCC: User story specific code coverage tool
+2017-06-08 12:53:55 DEBUG RunCodeCoverage:109 - userStory:US-1234
+2017-06-08 12:54:35 DEBUG RunCodeCoverage:113 - pathToSrc:D:\svnCompileProject
+2017-06-08 12:54:35 INFO  RunCodeCoverage:125 - Coverage Project Type =svn
+2017-06-08 12:54:37 DEBUG RunCodeCoverage:206 - coverageTool Option:1
+2017-06-08 12:54:37 DEBUG RunCodeCoverage:161 - Going to get svn Files and Lines to get Coverage for User-Story: US-1234
+
+
+2017-06-08 12:54:37 DEBUG SVNCodeCoverage:79 - Logs Created Successfully.....
+
+
+2017-06-08 12:54:37 DEBUG SVNCodeCoverage:310 - svn blame --xml D:\svnCompileProject/src/main/java/com/mkyong/core/App.java
+2017-06-08 12:54:37 DEBUG SVNCodeCoverage:325 -  Created file computeFileLineNoMap PATHD:\WorkSpaceForUSSCC6-8-2007\code-coverag-tool\.\xml\blame\svnBlame_.xml
+2017-06-08 12:54:37 DEBUG SVNCodeCoverage:227 - fileLineNoMap.toString(){/src/main/java/com/mkyong/core/App.java=[7, 8, 9, 10, 15, 16, 17, 18, 19, 20]}
+2017-06-08 12:54:37 DEBUG RunCodeCoverage:172 - fileLineNoMap{/src/main/java/com/mkyong/core/App.java=[7, 8, 9, 10, 15, 16, 17, 18, 19, 20]}
+2017-06-08 12:54:37 INFO  ComputeSimpleUSCoverage:90 - calling getCoverageList
+2017-06-08 12:54:37 INFO  ComputeSimpleUSCoverage:283 - pathToProject in getCoverageList :: D:\svnCompileProject/target/site/cobertura/coverage.xml
+2017-06-08 13:17:10 DEBUG RunCodeCoverage:100 - USSCC: User story specific code coverage tool
+2017-06-08 13:17:21 DEBUG RunCodeCoverage:109 - userStory:US-1234
+2017-06-08 13:17:38 DEBUG RunCodeCoverage:113 - pathToSrc:D:\svnCompileProject
+2017-06-08 13:17:38 INFO  RunCodeCoverage:125 - Coverage Project Type =svn
+2017-06-08 13:17:39 DEBUG RunCodeCoverage:206 - coverageTool Option:1
+2017-06-08 13:17:39 DEBUG RunCodeCoverage:161 - Going to get svn Files and Lines to get Coverage for User-Story: US-1234
+
+
+2017-06-08 13:17:39 DEBUG SVNCodeCoverage:79 - Logs Created Successfully.....
+
+
+2017-06-08 13:17:39 DEBUG SVNCodeCoverage:310 - svn blame --xml D:\svnCompileProject/src/main/java/com/mkyong/core/App.java
+2017-06-08 13:17:39 DEBUG SVNCodeCoverage:325 -  Created file computeFileLineNoMap PATHD:\WorkSpaceForUSSCC6-8-2007\code-coverag-tool\.\xml\blame\svnBlame_.xml
+2017-06-08 13:17:39 DEBUG SVNCodeCoverage:227 - fileLineNoMap.toString(){/src/main/java/com/mkyong/core/App.java=[7, 8, 9, 10, 15, 16, 17, 18, 19, 20]}
+2017-06-08 13:17:39 DEBUG RunCodeCoverage:172 - fileLineNoMap{/src/main/java/com/mkyong/core/App.java=[7, 8, 9, 10, 15, 16, 17, 18, 19, 20]}
+2017-06-08 13:17:39 INFO  ComputeSimpleUSCoverage:90 - calling getCoverageList
+2017-06-08 13:17:39 INFO  ComputeSimpleUSCoverage:283 - pathToProject in getCoverageList :: D:\svnCompileProject/target/site/cobertura/coverage.xml

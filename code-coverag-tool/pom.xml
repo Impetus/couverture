@@ -41,7 +41,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>com.codecoverage.runner.RunCodeCoverage</mainClass>
+							<mainClass>com.impetus.codecoverage.runner.RunCodeCoverage</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -51,7 +51,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.codecoverage.runner.RunCodeCoverage</mainClass>
+							<mainClass>com.impetus.codecoverage.runner.RunCodeCoverage</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>
