@@ -16,7 +16,7 @@ A. USSCC Sonar Plug-in.
 
 
 > ## To run this tool with your Projects sonar setup, please follow the below steps:-
-> 1.   Make sure your project implement Jacoco or Cobertura and create Jacoco.xml or cobertura’s coverage.xml
+> 1.   Make sure your project implement Jacoco or Cobertura and create Jacoco.xml or coberturaâ€™s coverage.xml
 >      (To know how to do this, please refer to documents in USSCC_DOCUMENT/implement coverage xml)
 > 2.   build your project to generate jacoco.xml or coverage.xml for your project
 > 3.   Tool is available as a Plugin to SonarQube. To generate sonar report with USSC tool follow these steps :-
