@@ -18,6 +18,7 @@ import com.impetus.codecoverage.widget.USSCCRubyWidget;
 		@Property(key = USSCCPlugin.USER_STORY, name = "User Story", description = "User Story Number", defaultValue = "US-1234"),
 		@Property(key = USSCCPlugin.RALLY_KEY, name = "Rally Login Key", description = "Rally Login Key"),
 		@Property(key = USSCCPlugin.JIRA_URL, name = "Jira URL", description = "JIRA URL"),
+		@Property(key = USSCCPlugin.RALLY_RELEASE, name = "Rally Release ID", description = "Rally Release No"),
 		@Property(key = USSCCPlugin.JIRA_LOGIN, name = "Jira Login ID", description = "JIRA Login ID"),
 		@Property(key = USSCCPlugin.JIRA_PASSWORD, name = "Jira Login Password", description = "JIRA Login Password"),
 		@Property(key = USSCCPlugin.JIRA_JQL, name = "Jira JQL", description = "JIRA JQL", defaultValue = "sprint in openSprints() and sprint not in futureSprints() and issuetype in (Bug, Story)")
@@ -33,6 +34,9 @@ public final class USSCCPlugin extends SonarPlugin {
 	
 	/** The Constant JIRA_URL. */
 	public static final String JIRA_URL = "sonar.jira.url";
+	
+	/** The Constant RALLY_RELEASE. */
+	public static final String RALLY_RELEASE = "sonar.rally.release";
 	
 	/** The Constant JIRA_LOGIN. */
 	public static final String JIRA_LOGIN = "sonar.jira.login";
