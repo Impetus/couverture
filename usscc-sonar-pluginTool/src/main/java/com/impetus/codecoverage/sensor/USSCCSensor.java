@@ -23,6 +23,7 @@ import com.atlassian.jira.rest.client.api.domain.Issue;
 import com.atlassian.jira.rest.client.api.domain.SearchResult;
 import com.atlassian.jira.rest.client.internal.async.AsynchronousJiraRestClientFactory;
 import com.atlassian.util.concurrent.Promise;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.impetus.codecoverage.plugin.USSCCMetrics;
@@ -95,6 +96,7 @@ public class USSCCSensor implements Sensor {
 		String userStory = settings.getString(USSCCPlugin.USER_STORY);
 		String rallyKey = settings.getString(USSCCPlugin.RALLY_KEY);
 		String JIRAURL = settings.getString(USSCCPlugin.JIRA_URL);
+		String releaseId = settings.getString(USSCCPlugin.RALLY_RELEASE);
 		String JiraLogin = settings.getString(USSCCPlugin.JIRA_LOGIN);
 		String JIRAPassword = settings.getString(USSCCPlugin.JIRA_PASSWORD);
 		String JIRAJQL = settings.getString(USSCCPlugin.JIRA_JQL);
@@ -105,7 +107,7 @@ public class USSCCSensor implements Sensor {
 		LOG.info("Coverage Project Path =" + getDirec);
 		LOG.info("os =" + os);
 		LOG.info("sonar.path.data  =" + settings.getString("sonar.path.data"));
-		
+		    
 		if (coverageFor == null) {
 			File f = new File(getDirec + "/.git");
 			if (f.exists()) {
@@ -119,14 +121,36 @@ public class USSCCSensor implements Sensor {
 				}
 			}
 		}
+		
 		LOG.info("Coverage Project Type =" + coverageFor);
 		if (coverageFor==null)
 			coverageFor = "svn";
 		String userStoryFromRally = "";
-		if(rallyKey != null && rallyKey.length()>0){
-			userStoryFromRally = getUserStoryFromRall(rallyKey);
-			if (userStoryFromRally!=null && userStoryFromRally.length()>0){
-				addCoverage(getDirec, coverageFor, userStoryFromRally , os);
+	
+		if (rallyKey != null && rallyKey.length() > 0 && releaseId != null) {
+			try {
+				userStoryFromRally = getUserStroyFromRelease(rallyKey,
+						releaseId);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if (userStoryFromRally != null && userStoryFromRally.length() > 0
+					&& releaseId != null) {
+				addCoverage(getDirec, coverageFor, userStoryFromRally, os);
+			}
+		}
+
+		if (rallyKey != null && rallyKey.length() > 0
+				&& userStoryFromRally.length() <= 0) {
+			try {
+				userStoryFromRally = getUserStoryFromRally(rallyKey);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if (userStoryFromRally != null && userStoryFromRally.length() > 0) {
+				addCoverage(getDirec, coverageFor, userStoryFromRally, os);
 			}
 		}
 		
@@ -142,7 +166,7 @@ public class USSCCSensor implements Sensor {
 			addCoverage(getDirec, coverageFor, userStory, os);
 		}
 					
-		LOG.info("coverage.buildData() =" + coverage.buildData());
+		LOG.info("coverage.buildData() =" +coverage.buildData());
 		sensorContext.saveMeasure(new Measure(
 				USSCCMetrics.RESULT_COVERAGE_MAP, coverage.buildData()));
 		
@@ -151,7 +175,6 @@ public class USSCCSensor implements Sensor {
 				USSCCMetrics.NOTCOVERED_USER_STORIES, RunCodeCoverage.getNotCoveredUserStories()));
 		
 		LOG.info("notCoveredLines.buildData() =" + notCoveredLines.buildData());
-		
 		sensorContext.saveMeasure(new Measure(
 				USSCCMetrics.NOTCOVERED_LINES, notCoveredLines.buildData()));
 		
@@ -167,6 +190,103 @@ public class USSCCSensor implements Sensor {
         
 	}
 	
+	
+
+	/**
+	 * This method is used for Gets the user story in Rally from release and return a value as a string.
+	 *
+	 * @param rallyKey the rally key
+	 * @param releaseId the release Id
+	 * @return the user story from release in rally
+	 */
+	private String getUserStroyFromRelease(String rallyKey, String releaseId)
+			throws IOException {
+
+		String Wspace_ref = null;
+		RallyRestApi restApi = null;
+		String USNumbers = "";
+		try {
+			restApi = new RallyRestApi(new URI("https://rally1.rallydev.com"),
+					rallyKey);
+		} catch (Exception e1) {
+			LOG.error("error", e1);
+		}
+		// Read Subscriptions
+		QueryRequest subscriptionRequest = new QueryRequest("Subscriptions");
+		QueryResponse subscriptonResponse = restApi.query(subscriptionRequest);
+		// Release
+		QueryRequest defectCount = new QueryRequest("hierarchicalrequirement");
+		// grab workspace collection
+		QueryRequest workSpaceRequest = new QueryRequest(subscriptonResponse
+				.getResults().get(0).getAsJsonObject()
+				.getAsJsonObject("Workspaces"));
+		workSpaceRequest.setFetch(new Fetch("Name", "_ref"));
+		JsonArray myWorkSpaces = restApi.query(workSpaceRequest).getResults();
+		// iterate through the workSpace to find the correct one
+		String workSpaceName = "";
+		for (int i = 0; i < myWorkSpaces.size(); i++) {
+			workSpaceName = myWorkSpaces.get(i).getAsJsonObject().get("Name")
+					.getAsString();
+			Wspace_ref = myWorkSpaces.get(i).getAsJsonObject().get("_ref")
+					.getAsString();
+			LOG.info("work space name =" + workSpaceName);
+			Wspace_ref = Wspace_ref.substring(Wspace_ref.lastIndexOf("0/") + 1);
+			Wspace_ref = Wspace_ref.replace("\"", "");
+			LOG.info("ready workspace =" + Wspace_ref);
+			defectCount.setWorkspace(Wspace_ref);
+			String[] release_key = { releaseId };
+			int count = 0;
+			if (releaseId != null && releaseId.contains(",")) {
+				release_key = releaseId.split(",");
+			}
+			for (String release : release_key) {
+				defectCount.setQueryFilter(new QueryFilter("Release.Name", "=",
+						release));
+				defectCount.setFetch(new Fetch(new String[] { "FormattedID" }));
+				defectCount.setPageSize(1);
+				defectCount.setLimit(500);
+				int total = 0;
+				QueryResponse userStoryNumbers = null;
+				try {
+					if (restApi != null) {
+						userStoryNumbers = restApi.query(defectCount);
+						LOG.info("defectCountResponse :" + userStoryNumbers);
+					}
+				} catch (IOException e) {
+					e.printStackTrace();
+					LOG.error("error", e);
+				}
+				if (userStoryNumbers != null) {
+					total = userStoryNumbers.getTotalResultCount();
+					LOG.info("total :" + total + "defectCountResponse : "
+							+ userStoryNumbers.getResults());
+				}
+				if (total > 0 && userStoryNumbers != null) {
+					for (JsonElement userStory : userStoryNumbers.getResults()) {
+						JsonObject defect1 = userStory.getAsJsonObject();
+						LOG.info("FormattedID: " + defect1.get("FormattedID"));
+						if (defect1.get("FormattedID") != null
+								&& defect1.get("FormattedID").toString()
+										.length() > 0)
+							USNumbers = USNumbers
+									+ defect1
+											.get("FormattedID")
+											.toString()
+											.substring(
+													1,
+													defect1.get("FormattedID")
+															.toString()
+															.length() - 1)
+									+ ",";
+					}
+				}
+
+			}
+
+		}
+
+		return USNumbers;
+	}
 	
 	/**
 	 * This method is used for  Gets the user story from JIRA and return a value as a string.
@@ -200,54 +320,111 @@ public class USSCCSensor implements Sensor {
 		return USNumbers;
 	}
 	
+	
+	
 	/**
 	 * This method is used for Gets the user story from Rall and return a value as a string.
 	 *
 	 * @param rallyKey the rally key
 	 * @return the user story from rall
 	 */
-	private String getUserStoryFromRall(String rallyKey){
+	private String getUserStoryFromRally(String rallyKey) throws IOException {
 		RallyRestApi restApi = null;
 		String USNumbers = "";
+		String workspaceName = "";
+		String Wspace_ref = null;
 		try {
-			restApi = new RallyRestApi(new URI("https://rally1.rallydev.com"), rallyKey);
-			
+			restApi = new RallyRestApi(new URI("https://rally1.rallydev.com"),
+					rallyKey);
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
 			LOG.error("error", e1);
 		}
-        
+		QueryRequest subscriptionRequest = new QueryRequest("Subscriptions");
+		QueryResponse subscriptionQueryResponse = restApi
+				.query(subscriptionRequest);
 		QueryRequest defectCount = new QueryRequest("hierarchicalrequirement");
-		defectCount.setQueryFilter(new QueryFilter("Iteration.StartDate", "<=", "today").and(new QueryFilter("Iteration.EndDate", ">=", "today")));
-        defectCount.setFetch(new Fetch("FormattedID"));
-
-		defectCount.setPageSize(1);
-        defectCount.setLimit(500);
-        int total = 0;
-		QueryResponse defectCountResponse = null;
-		try {
-			if(restApi!=null)
-			{
-			defectCountResponse = restApi.query(defectCount);
-			LOG.info("defectCountResponse :"+defectCountResponse);
+		QueryRequest projectRequest = new QueryRequest("Project");
+		defectCount.setQueryFilter(new QueryFilter("Iteration.StartDate", "<=","today").and(new QueryFilter("Iteration.EndDate", ">=", "today")));
+		projectRequest.setFetch(new Fetch("Projects"));
+		QueryRequest workspaceRequest = new QueryRequest(
+				subscriptionQueryResponse.getResults().get(0).getAsJsonObject()
+						.getAsJsonObject("Workspaces"));
+		workspaceRequest.setFetch(new Fetch("Name", "_ref"));
+		JsonArray myWorkspaces = restApi.query(workspaceRequest).getResults();
+		for (int i = 0; i < myWorkspaces.size(); i++) {
+			Wspace_ref = myWorkspaces.get(i).getAsJsonObject().get("_ref")
+					.getAsString();
+			Wspace_ref = Wspace_ref.substring(Wspace_ref.lastIndexOf("0/") + 1);
+			Wspace_ref = Wspace_ref.replace("\"", "");
+			LOG.info("ready workspace :" + Wspace_ref);
+			projectRequest.setWorkspace(Wspace_ref);
+			defectCount.setFetch(new Fetch(new String[] { "FormattedID" }));
+			QueryResponse projectQueryResponse = restApi.query(projectRequest);
+			defectCount.setPageSize(1);
+			defectCount.setLimit(500);
+			int count = projectQueryResponse.getResults().size();
+			if (projectQueryResponse != null) {
+				count = projectQueryResponse.getTotalResultCount();
 			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			LOG.error("error", e);
+			if (count > 0 && projectQueryResponse != null) {
+				for (JsonElement result : projectQueryResponse.getResults()) {
+					JsonObject defect = result.getAsJsonObject();
+
+					if (defect.get("_ref") != null
+							&& defect.get("_ref").toString().length() > 0) {
+
+						String ProjectRf = defect.get("_ref").toString();
+						ProjectRf = ProjectRf.substring(ProjectRf
+								.lastIndexOf("0/") + 1);
+						ProjectRf = ProjectRf.replace("\"", "");
+						defectCount.setProject(ProjectRf);
+						LOG.info("ProjectRf :" + ProjectRf);
+						int total = 0;
+						QueryResponse defectCountResponse = null;
+						try {
+							if (restApi != null) {
+								defectCountResponse = restApi
+										.query(defectCount);
+								LOG.info("defectCountResponse :"
+										+ defectCountResponse);
+							}
+						} catch (IOException e) {
+							e.printStackTrace();
+							LOG.error("error", e);
+						}
+						if (defectCountResponse != null) {
+							total = defectCountResponse.getTotalResultCount();
+							LOG.info("total : " + total+ " defectCountResponse : "+ defectCountResponse.getResults());
+							}
+						if (total > 0 && defectCountResponse != null) {
+							for (JsonElement result1 : defectCountResponse
+									.getResults()) {
+								JsonObject defect1 = result1.getAsJsonObject();
+								LOG.info("FormattedID: "
+										+ defect1.get("FormattedID"));
+								if (defect1.get("FormattedID") != null
+										&& defect1.get("FormattedID")
+												.toString().length() > 0)
+									USNumbers = USNumbers
+											+ defect1
+													.get("FormattedID")
+													.toString()
+													.substring(
+															1,
+															defect1.get(
+																	"FormattedID")
+																	.toString()
+																	.length() - 1)
+											+ ",";
+							}
+						}
+
+					}
+
+				}
+			}
 		}
-		if(defectCountResponse!=null)
-		{
-		 total = defectCountResponse.getTotalResultCount();
-		LOG.info("total : "+total);
-		}
-		if(total > 0 && defectCountResponse!=null){
-			for (JsonElement result : defectCountResponse.getResults()) {
-                JsonObject defect = result.getAsJsonObject();
-                LOG.info("FormattedID: " + defect.get("FormattedID"));
-                if (defect.get("FormattedID")!=null && defect.get("FormattedID").toString().length()>0)
-                	USNumbers = USNumbers + defect.get("FormattedID").toString().substring(1,defect.get("FormattedID").toString().length()-1) + ",";
-            }
-		}
+		LOG.info("User specific code coverage:-- " + USNumbers);  
 		return USNumbers;
 	}
 
