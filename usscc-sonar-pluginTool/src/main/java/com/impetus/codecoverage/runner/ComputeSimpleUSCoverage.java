@@ -96,6 +96,8 @@ public class ComputeSimpleUSCoverage {
 		}
 
 		Double coverage ;
+		
+		int lengthCounter = 0;
 
 		for (Map.Entry<String, ArrayList<String>> entry : m.entrySet()) {
 			String fileName = entry.getKey();
@@ -105,12 +107,23 @@ public class ComputeSimpleUSCoverage {
 				int hits = getCoverage(fileName, lineNo, pathToCoverageXML);
 				if (!(hits == -1 || hits >0)) {
 					notCoveredList.add(lineNo);
+					lengthCounter = lengthCounter + lineNo.length() + 2; // adding 2 for space and comma 
 				}
 			}
+			lengthCounter = lengthCounter + 4; // =[];
 			fileName = trimFileName(fileName);
-			uSSNotCoveredCode.put(userStory + "," + fileName, notCoveredList);
+			
+			if (lengthCounter+(userStory + "," + fileName).length()<3900)
+				uSSNotCoveredCode.put(userStory + "," + fileName, notCoveredList);
+			else
+			{
+				LOGGER.info("Total Line Count : " +totalLineCount);
+				LOGGER.info("lengthCounter : " +lengthCounter);
+				break;
+			}
+				
 		}
-
+			
 		try {
 			coverage = (double) (totalHitsCount / totalLineCount) * 100;
 		} catch (Exception e) {
@@ -130,6 +143,7 @@ public class ComputeSimpleUSCoverage {
 		totalLineCount = 0;
 		return finalCov;
 	}
+	
 	/**
      *This method return a string value and trim filename for overall coverage code.
      *
