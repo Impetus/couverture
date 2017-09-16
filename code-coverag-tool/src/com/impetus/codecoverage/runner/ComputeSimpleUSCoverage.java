@@ -6,7 +6,6 @@ package com.impetus.codecoverage.runner;
  * Step1: Read coverage.xml
  */
 
-import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,10 +13,13 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
@@ -53,7 +55,7 @@ public class ComputeSimpleUSCoverage {
     private static final String CLASS = "class";
 	
 	/** The u SS not covered code. */
-	static Map<String, Set<String>> USSNotCoveredCode = new HashMap();
+	static Map<String, String> USSNotCoveredCode = new HashMap<String, String>();
 	
 	/** The not coverage list. */
 	static ArrayList<String> notCoverageList;
@@ -99,17 +101,53 @@ public class ComputeSimpleUSCoverage {
 
         for (Map.Entry<String, ArrayList<String>> entry : fileLineNoMap.entrySet()) {
             String fileName = entry.getKey();
-			Set<String> notCoveredList = new HashSet();
+			Set<String> notCoveredList = new HashSet<String>();
+			SortedSet<Integer> sortedRangeList = new TreeSet<Integer>();
             List<String> lineNoList = entry.getValue();
             for (String lineNo : lineNoList) {
                 int hits = getCoverage(fileName, lineNo, pathToCoverageXML);
                 //Saurabh: comment -1 to add lines not in xml in csv result
                 if (!(hits == -1 || hits >0)) {
-                    notCoveredList.add(lineNo);
+                	sortedRangeList.add(Integer.parseInt(lineNo));
                 }
             }
             fileName = trimFileName(fileName);
-			USSNotCoveredCode.put(userStory+","+fileName, notCoveredList);
+            Iterator<Integer> itr = sortedRangeList.iterator();
+			String start = "";
+			int lastNumber = -20;
+			Integer currentNumber = null;
+			boolean series = false;
+			boolean first = true;
+			while (itr.hasNext()) {
+				currentNumber = itr.next();
+				if (first) {
+					lastNumber = currentNumber;
+				}
+				if (currentNumber == lastNumber + 1) {
+					if (!series) {
+						series = true;
+						start = start + lastNumber;
+					}
+				} else {
+					if (series) {
+						series = false;
+						start = start + "-" + lastNumber + ",";
+					} else {
+						if (!first)
+							start = start + lastNumber + ",";
+					}
+				}
+				lastNumber = currentNumber;
+				first = false;
+			}
+			if (series) {
+				series = false;
+				start = start + "-" + lastNumber;
+			} else {
+				start = start + lastNumber;
+			}
+			LOGGER.info("start : "+userStory + "," + fileName +" : "+  start);
+			USSNotCoveredCode.put(userStory+","+fileName, start);
         }
 
         if (totalLineCount > 0)
@@ -145,7 +183,7 @@ public class ComputeSimpleUSCoverage {
 	 *
 	 * @return the not covered code map
 	 */
-	public static Map<String, Set<String>> getNotCoveredCodeMap() {
+	public static Map<String, String> getNotCoveredCodeMap() {
 
 		return USSNotCoveredCode;
 	}
@@ -155,10 +193,10 @@ public class ComputeSimpleUSCoverage {
 	 *
 	 * @param mapToWrite the map to write
 	 */
-	public static void writeToCSV(Map<String, Set<String>> mapToWrite) {
+	public static void writeToCSV(Map<String, String> mapToWrite) {
 
 		String key;
-		Set<String> value;
+		String value;
 		FileWriter fileWriter = null;
 		// Delimiter used in CSV file
 
@@ -179,16 +217,11 @@ public class ComputeSimpleUSCoverage {
 
 			fileWriter.append(NEW_LINE_SEPARATOR);
 
-			for (Entry<String, Set<String>> entry : mapToWrite.entrySet()) {
+			for (Entry<String, String> entry : mapToWrite.entrySet()) {
 				key = entry.getKey();
 				value = entry.getValue();
 				if (value != null && !value.isEmpty()) {
-					fileWriter.append(key + COMMA_DELIMITER);
-
-					for (String temp : value) {
-						fileWriter.append(temp + " ");
-					}
-
+					fileWriter.append(key + COMMA_DELIMITER + value);
 					fileWriter.append(NEW_LINE_SEPARATOR);
 				}
 			}
