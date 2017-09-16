@@ -137,7 +137,7 @@ public class ComputeSimpleUSCoverage {
 				} else {
 					if (series) {
 						series = false;
-						start = start + " to " + lastNumber + ",";
+						start = start + "-" + lastNumber + ",";
 					} else {
 						if (!first)
 							start = start + lastNumber + ",";
@@ -148,7 +148,7 @@ public class ComputeSimpleUSCoverage {
 			}
 			if (series) {
 				series = false;
-				start = start + " to " + lastNumber;
+				start = start + "-" + lastNumber;
 			} else {
 				start = start + lastNumber;
 			}
