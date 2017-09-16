@@ -9,8 +9,11 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import java.util.Map.Entry;
 import java.util.Set;
 
@@ -53,7 +56,7 @@ public class ComputeSimpleUSCoverage {
 	private static final String CLASS = "class";
 	
 	/** The u SS not covered code. */
-	static Map<String, Set<String>> uSSNotCoveredCode = new HashMap();
+	static Map<String, String> uSSNotCoveredCode = new HashMap();
         
         /** The not coverage list. */
         static List<String> notCoverageList;
@@ -101,20 +104,57 @@ public class ComputeSimpleUSCoverage {
 
 		for (Map.Entry<String, ArrayList<String>> entry : m.entrySet()) {
 			String fileName = entry.getKey();
-			Set<String> notCoveredList = new HashSet();
+			Set<String> notCoveredList = new HashSet<String>();
+			SortedSet<Integer> sortedRangeList = new TreeSet<Integer>();
 			List<String> lineNoList = entry.getValue();
 			for (String lineNo : lineNoList) {
 				int hits = getCoverage(fileName, lineNo, pathToCoverageXML);
 				if (!(hits == -1 || hits >0)) {
-					notCoveredList.add(lineNo);
+					//notCoveredList.add(lineNo);
+					sortedRangeList.add(Integer.parseInt(lineNo));
 					lengthCounter = lengthCounter + lineNo.length() + 2; // adding 2 for space and comma 
 				}
 			}
 			lengthCounter = lengthCounter + 4; // =[];
 			fileName = trimFileName(fileName);
 			
+			Iterator<Integer> itr = sortedRangeList.iterator();
+			String start = "";
+			int lastNumber = -20;
+			Integer currentNumber = null;
+			boolean series = false;
+			boolean first = true;
+			while (itr.hasNext()) {
+				currentNumber = itr.next();
+				if (first) {
+					lastNumber = currentNumber;
+				}
+				if (currentNumber == lastNumber + 1) {
+					if (!series) {
+						series = true;
+						start = start + lastNumber;
+					}
+				} else {
+					if (series) {
+						series = false;
+						start = start + " to " + lastNumber + ",";
+					} else {
+						if (!first)
+							start = start + lastNumber + ",";
+					}
+				}
+				lastNumber = currentNumber;
+				first = false;
+			}
+			if (series) {
+				series = false;
+				start = start + " to " + lastNumber;
+			} else {
+				start = start + lastNumber;
+			}
+			LOGGER.info("start : "+userStory + "," + fileName +" : "+  start);
 			if (lengthCounter+(userStory + "," + fileName).length()<3900)
-				uSSNotCoveredCode.put(userStory + "," + fileName, notCoveredList);
+				uSSNotCoveredCode.put(userStory + "," + fileName, start);
 			else
 			{
 				LOGGER.info("Total Line Count : " +totalLineCount);
@@ -161,7 +201,7 @@ public class ComputeSimpleUSCoverage {
 	 *
 	 * @return the not covered code map
 	 */
-	public static Map<String, Set<String>> getNotCoveredCodeMap() {
+	public static Map<String, String> getNotCoveredCodeMap() {
 
 		return uSSNotCoveredCode;
 	}

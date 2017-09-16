@@ -61,7 +61,7 @@ public class USSCCSensor implements Sensor {
 	PropertiesBuilder<String, String> coverage = new PropertiesBuilder();
 	
 	/** The not covered lines. */
-	PropertiesBuilder<String, Set<String>> notCoveredLines = new PropertiesBuilder<>();
+	PropertiesBuilder<String, String> notCoveredLines = new PropertiesBuilder<>();
 	
 	/** The u SS coverage. */
 	Map<String, String> uSSCoverage = new HashMap();
@@ -476,7 +476,7 @@ public class USSCCSensor implements Sensor {
 			for (Map.Entry<String, String> a : uSSCoverage.entrySet()) {
 				coverage.add(a.getKey(), a.getValue());
 			}
-			for (Map.Entry<String, Set<String>> a : ComputeSimpleUSCoverage.getNotCoveredCodeMap().entrySet()) {
+			for (Map.Entry<String, String> a :ComputeSimpleUSCoverage.getNotCoveredCodeMap().entrySet()) {
 				notCoveredLines.add(a.getKey(), a.getValue());
 			}
 			
