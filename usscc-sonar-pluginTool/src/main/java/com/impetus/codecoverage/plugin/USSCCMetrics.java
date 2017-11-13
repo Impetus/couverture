@@ -30,6 +30,12 @@ public final class USSCCMetrics implements Metrics {
     public static final Metric PROJECT_NAME = new Metric.Builder("project_name", "Project Name", Metric.ValueType.STRING)
     .setDescription("This stores Name of the project.").setQualitative(false).setDomain(CoreMetrics.DOMAIN_GENERAL).create();
     
+    
+    
+    
+   /** The Constant S3 ACCESS KEY. */
+    public static final Metric S3_ACCESKEY = new Metric.Builder("s3Accesskey", "S3 AccessKey", Metric.ValueType.STRING)
+    .setDescription("This stores s3 accesskey.").setQualitative(false).setDomain(CoreMetrics.DOMAIN_GENERAL).create();
    // getMetrics() method is defined in the Metrics interface and is used by
     // Sonar to retrieve the list of new metrics
     
@@ -39,6 +45,6 @@ public final class USSCCMetrics implements Metrics {
    @SuppressWarnings("rawtypes")
     @Override
     public List<Metric> getMetrics() {
-        return Arrays.<Metric> asList(RESULT_COVERAGE_MAP, NOTCOVERED_USER_STORIES, NOTCOVERED_LINES, PROJECT_NAME);
+        return Arrays.<Metric> asList(RESULT_COVERAGE_MAP, NOTCOVERED_USER_STORIES, NOTCOVERED_LINES, PROJECT_NAME,S3_ACCESKEY);
     }
 }

@@ -21,8 +21,11 @@ import com.impetus.codecoverage.widget.USSCCRubyWidget;
 		@Property(key = USSCCPlugin.RALLY_RELEASE, name = "Rally Release ID", description = "Rally Release No"),
 		@Property(key = USSCCPlugin.JIRA_LOGIN, name = "Jira Login ID", description = "JIRA Login ID"),
 		@Property(key = USSCCPlugin.JIRA_PASSWORD, name = "Jira Login Password", description = "JIRA Login Password"),
-		@Property(key = USSCCPlugin.JIRA_JQL, name = "Jira JQL", description = "JIRA JQL", defaultValue = "sprint in openSprints() and sprint not in futureSprints() and issuetype in (Bug, Story)")
-		})
+		@Property(key = USSCCPlugin.JIRA_JQL, name = "Jira JQL", description = "JIRA JQL", defaultValue = "sprint in openSprints() and sprint not in futureSprints() and issuetype in (Bug, Story)"),
+		@Property(key = USSCCPlugin.S3_ACCESSKEY, name = "S3 Access Key", description = "S3 Access Key"),
+		@Property(key = USSCCPlugin.S3_SECRETKEY, name = "S3 SecretKey", description = "S3 SecretKey")
+		
+})
 
 public final class USSCCPlugin extends SonarPlugin {
 
@@ -46,6 +49,16 @@ public final class USSCCPlugin extends SonarPlugin {
 	
 	/** The Constant JIRA_JQL. */
 	public static final String JIRA_JQL = "sonar.jira.jql";
+	
+	
+	/** The Constant S3 ACCESSKEY. */
+	public static final String S3_ACCESSKEY = "sonar.s3.accesskey";
+	/** The Constant S3 SECREATKEY. */
+	public static final String  S3_SECRETKEY  = "sonar.s3.secretkey";
+	
+	
+	
+	
 	
 	/* 
 	 * this method is used for get the extension and return a list.

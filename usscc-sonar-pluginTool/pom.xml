@@ -93,6 +93,37 @@
       <version>1.4</version>
       <scope>test</scope>
     </dependency>
+    
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>2.8</version>
+      <scope>compile</scope>
+    </dependency>
+    
+  
+  
+  <!--  <dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk-s3</artifactId>
+  </dependency>
+  <dependency>
+   -->
+    
+    <dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk</artifactId>
+    <version>1.11.106</version>
+  </dependency>
+    
+   <dependency>
+   <groupId>org.apache.httpcomponents</groupId>
+   <artifactId>httpclient</artifactId>
+   <version>4.5.2</version>
+   <scope>runtime</scope>
+ </dependency> 
+    
+    
   </dependencies>
 
   <build>
@@ -128,6 +159,7 @@
           </execution>
         </executions>
       </plugin>
+      
     </plugins>
   </build>
 

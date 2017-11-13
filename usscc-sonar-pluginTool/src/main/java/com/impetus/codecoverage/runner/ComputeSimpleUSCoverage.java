@@ -1,5 +1,6 @@
 package com.impetus.codecoverage.runner;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -22,6 +23,14 @@ import javax.xml.stream.XMLStreamReader;
 
 import org.apache.log4j.Logger;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.CannedAccessControlList;
+import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.impetus.codecoverage.model.Coverage;
 
 
@@ -58,6 +67,16 @@ public class ComputeSimpleUSCoverage {
         
         /** The not coverage list. */
         static List<String> notCoverageList;
+        
+        
+        
+    /*    private static String bucketName="impetususcca";
+    	private static String  keyName="sample";
+    	private static String uploadFileName="D:\\abc.docx";  
+    */    
+        
+        
+        
 
 	/**
 	 * Instantiates a new compute simple US coverage.
@@ -151,14 +170,15 @@ public class ComputeSimpleUSCoverage {
 				start = start + lastNumber;
 			}
 			LOGGER.info("start : "+userStory + "," + fileName +" : "+  start);
-			if (lengthCounter+(userStory + "," + fileName).length()<3900)
-				uSSNotCoveredCode.put(userStory + "," + fileName, start);
-			else
+			//if (lengthCounter+(userStory + "," + fileName).length()<3900)
+			if (!start.equals("-20"))
+				uSSNotCoveredCode.put(userStory + "," + fileName, start);			
+			/*else
 			{
 				LOGGER.info("Total Line Count : " +totalLineCount);
 				LOGGER.info("lengthCounter : " +lengthCounter);
 				break;
-			}
+			}*/
 				
 		}
 			
@@ -210,74 +230,134 @@ public class ComputeSimpleUSCoverage {
 	 * @param mapToWrite the map to write
 	 */
 	
-	public static void writeToCSV(Map<String, Set<String>> mapToWrite, String sonarHomepath) {
+	public static void writeToCSV(Map<String, String> mapToWrite,
+			String sonarHomepath, String projectName, String s3AccessKey,String s3SecretKey) {
 
 		String key;
-		Set<String> value;
+		String value;
 		FileWriter fileWriter = null;
 		// Delimiter used in CSV file
 
-        final String commaDelimiter = ",";
+		sonarHomepath = null;
 
-        final String newLineSeparator = "\n";
+		final String commaDelimiter = ",";
+
+		final String newLineSeparator = "\n";
 
 		// CSV file header
-        final String fileHeader = "User Story, Class Name,Line Numbers not covered";
+		final String fileHeader = "User Story, Class Name,Line Numbers not covered";
 
 		try {
 			if ("".equals(sonarHomepath) || null == sonarHomepath) {
 				fileWriter = new FileWriter("./coverage_result.csv");
-			}else {
+			} else {
 				try {
-					fileWriter = new FileWriter(sonarHomepath+"/web/coverage_result.csv");
-				}catch (Exception e){
+					fileWriter = new FileWriter(sonarHomepath
+							+ "/web/coverage_result.csv");
+				} catch (Exception e) {
 					LOGGER.info("Unable to write in Sonar Home, so writing in project home directory");
 					LOGGER.info(e);
 					fileWriter = new FileWriter("./coverage_result.csv");
 				}
 			}
 
-
 			// Write the CSV file header
 
-            fileWriter.append(fileHeader);
+			fileWriter.append(fileHeader);
 			// Add a new line separator after the header
 
-            fileWriter.append(newLineSeparator);
+			fileWriter.append(newLineSeparator);
 
-			for (Entry<String, Set<String>> entry : mapToWrite.entrySet()) {
+			for (Entry<String, String> entry : mapToWrite.entrySet()) {
 				key = entry.getKey();
 				value = entry.getValue();
-				if (value != null && !value.isEmpty()) {
-					fileWriter.append(key + commaDelimiter);
-
-					for (String temp : value) {
-						fileWriter.append(temp + " ");
-					}
-
-					fileWriter.append(newLineSeparator);
-				}
+				fileWriter.append(key + commaDelimiter + value);
+				fileWriter.append(newLineSeparator);
 			}
-        	LOGGER.info("CSV file was created successfully !!!");
+
+			LOGGER.info("CSV file was created successfully !!!");
+
 			
+
 		} catch (IOException e) {
-            LOGGER.error(e.getMessage()+e);
-            LOGGER.error(e.getStackTrace());
+			LOGGER.error(e.getMessage() + e);
+			LOGGER.error(e.getStackTrace());
 		} finally {
 
 			try {
 				fileWriter.flush();
 				fileWriter.close();
+			
+				String fileLocation = "coverage_result.csv";
+				uploadFileS3(projectName, fileLocation,s3AccessKey,s3SecretKey);
+				
 			} catch (IOException e) {
-                LOGGER.error("Error while flushing/closing fileWriter !!!");
-                LOGGER.error(e.getStackTrace());
-                LOGGER.error(e.getMessage()+e);
+				LOGGER.error("Error while flushing/closing fileWriter !!!");
+				LOGGER.error(e.getStackTrace());
+				LOGGER.error(e.getMessage() + e);
 			}
 
 		}
 	}
 
+	
 
+	
+	public static void uploadFileS3(String keyName ,String fileLocation,String s3AccessKey,String s3SecretKey)
+	{
+	
+	     String bucketName="impetususcca";
+              
+		
+		AWSCredentials credentials = new  BasicAWSCredentials(s3AccessKey,s3SecretKey);
+		
+	     AmazonS3 s3client = new AmazonS3Client(credentials);
+		
+	     
+	     
+	     try
+		{
+			
+			System.out.println("uploading a new object to s3 from a file\n ");
+			File file = new  File(fileLocation);
+			
+			LOGGER.info(" **********************************************file Location*************	"+ fileLocation);
+			LOGGER.info("****************************************   fileName	"+ file.getName());
+			LOGGER.info("****************************************   absolutePath	"+ file.getAbsolutePath());
+			LOGGER.info("****************************************   path	"+ file.getPath());
+			
+			
+			
+			
+			keyName=keyName+".csv";
+		//	s3client.putObject(new  PutObjectRequest(bucketName, keyName, file));
+			s3client.putObject(new  PutObjectRequest(bucketName, keyName, file).withCannedAcl(CannedAccessControlList.PublicRead));
+			
+			System.out.println("done succussfuly");
+		}
+		catch(AmazonServiceException e)
+		{
+			System.out.println("Caught an AmazonServiceException, which " +	"means your request made it " +"to Amazon S3, but was rejected with an error response" +" for some reason.");
+			System.out.println("Error message :"+e.getMessage());
+			System.out.println("Http Status code:"+e.getStatusCode());
+			System.out.println(" AWS Error Message:"+e.getErrorCode());
+			System.out.println("Error type :"+e.getErrorType());
+			System.out.println("Request id"+e.getRequestId());
+			
+		}
+		catch(AmazonClientException e)
+		{
+			 System.out.println("Caught an AmazonClientException, which " +	"means the client encountered " +"an internal error while trying to " + "communicate with S3, " + "such as not being able to access the network.");
+	         System.out.println("Error Message: " + e.getMessage());
+		}
+	     
+	}
+
+	
+
+	
+	
+	
 
 	/**
 	 *This method return integer value and take a three parameters fileName ,hit lineNumber and pathToCoverageXML and show the covered line and get the coverage.

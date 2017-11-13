@@ -5,13 +5,17 @@ notcovered_line = measure('notcovered_line');
 notcovered_user_stories = measure('notcovered_user_stories');
 sonar_home = configuration('sonarqube.home');
 project_name = measure('project_name');
+s3Accesskey = measure('s3Accesskey');
+
 puts "project_name :: " + project_name.text_value;
+puts "s3Accesskey******************* :: " + s3Accesskey.text_value;
 %>
 <div class="dashbox">
   <h3>User Story Specific Code Coverage</h3>
  
   <br>
   <!--p>
+  
     Plugin Configured For User Stories : <%= configuration('sonar.coverage.userstory') -%><br/>
   </p-->
   <br>
@@ -142,7 +146,16 @@ puts "project_name :: " + project_name.text_value;
                   });
             </script>
             <br/>For lines not covered, please download csv file from below:<br/>
-            <button id="export_<%= project_name.text_value -%>" data-export="export">Download Uncovered Lines Result as CSV File</button>
+            
+            <% if s3Accesskey.text_value!=nil %>
+             <%= link_to "Download csv from this link", "https://s3.ap-south-1.amazonaws.com/impetususcca/"+project_name.text_value+".csv" %>
+               <% else %>
+                  <button id="export_<%= project_name.text_value -%>" data-export="export">Download Uncovered Lines Result as CSV File</button>   
+        <% end %> 
+
+         
+         
+                 
   <tr>
   <td>
                         User Story Number
@@ -156,6 +169,7 @@ puts "project_name :: " + project_name.text_value;
   </tr>
   <%
             notcovered = notcovered_line.text_value.split(";")
+            
             notcovered.each do |notcovered_with_us|
                   notcovered_with_us_array =
                         notcovered_with_us.split("=")

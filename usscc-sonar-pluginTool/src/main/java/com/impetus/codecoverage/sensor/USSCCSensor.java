@@ -1,6 +1,7 @@
 package com.impetus.codecoverage.sensor;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.util.HashMap;
@@ -18,6 +19,13 @@ import org.sonar.api.measures.Measure;
 import org.sonar.api.measures.PropertiesBuilder;
 import org.sonar.api.resources.Project;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.atlassian.jira.rest.client.api.JiraRestClient;
 import com.atlassian.jira.rest.client.api.domain.Issue;
 import com.atlassian.jira.rest.client.api.domain.SearchResult;
@@ -49,7 +57,7 @@ public class USSCCSensor implements Sensor {
 	Scanner scan = new Scanner(System.in);
 	
 	/** The settings. */
-	private Settings settings;
+	private static Settings settings;
 	
 	/** The path to src. */
 	static String pathToSrc = "";
@@ -100,6 +108,10 @@ public class USSCCSensor implements Sensor {
 		String JiraLogin = settings.getString(USSCCPlugin.JIRA_LOGIN);
 		String JIRAPassword = settings.getString(USSCCPlugin.JIRA_PASSWORD);
 		String JIRAJQL = settings.getString(USSCCPlugin.JIRA_JQL);
+		String s3AccessKey=settings.getString(USSCCPlugin.S3_ACCESSKEY);
+		String s3SecretKey=settings.getString(USSCCPlugin.S3_SECRETKEY);
+		
+		
 		String os = settings.getString("sun.desktop");
 		LOG.info(" sonar.working.directory	"+ settings.getString("sonar.working.directory"));
 		LOG.info("Coverage for User Stroy = " + userStory);
@@ -187,11 +199,33 @@ public class USSCCSensor implements Sensor {
         
         sensorContext.saveMeasure(new Measure(
                 USSCCMetrics.PROJECT_NAME, projectName));
-        
+    
+   
+        if (s3AccessKey.isEmpty())
+        	sensorContext.saveMeasure(new Measure(
+                		USSCCMetrics.S3_ACCESKEY, ""));
+        else
+        	sensorContext.saveMeasure(new Measure(
+            		USSCCMetrics.S3_ACCESKEY, s3AccessKey));
+     	
+        LOG.info("s3 access key$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ =" +s3AccessKey);
+		 
+        if(s3AccessKey!=null && s3SecretKey!=null)
+        {
+           Map<String, String> mapToWrite = ComputeSimpleUSCoverage.getNotCoveredCodeMap();
+          
+                String sonarHomePath=null;
+                ComputeSimpleUSCoverage.writeToCSV(mapToWrite, sonarHomePath, projectName,s3AccessKey,s3SecretKey);
+        } 
+                
+    
+	
 	}
-	
-	
 
+	
+	
+	
+	
 	/**
 	 * This method is used for Gets the user story in Rally from release and return a value as a string.
 	 *
@@ -478,6 +512,8 @@ public class USSCCSensor implements Sensor {
 			}
 			for (Map.Entry<String, String> a :ComputeSimpleUSCoverage.getNotCoveredCodeMap().entrySet()) {
 				notCoveredLines.add(a.getKey(), a.getValue());
+				LOG.info("comptuer*#####################"+a.getKey(), a.getValue());
+
 			}
 			
 	}
