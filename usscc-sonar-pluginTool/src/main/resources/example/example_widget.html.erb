@@ -147,10 +147,11 @@ puts "s3Accesskey******************* :: " + s3Accesskey.text_value;
             </script>
             <br/>For lines not covered, please download csv file from below:<br/>
             
-            <% if s3Accesskey.text_value!=nil %>
-             <%= link_to "Download csv from this link", "https://s3.ap-south-1.amazonaws.com/impetususcca/"+project_name.text_value+".csv" %>
+            <% if s3Accesskey.text_value =="0" %>
+             <button id="export_<%= project_name.text_value -%>" data-export="export">Download Uncovered Lines Result as CSV File</button>   
                <% else %>
-                  <button id="export_<%= project_name.text_value -%>" data-export="export">Download Uncovered Lines Result as CSV File</button>   
+             <%= link_to "Download csv from this link", "https://s3.ap-south-1.amazonaws.com/impetususcca/"+project_name.text_value+".csv" %>
+       
         <% end %> 
 
          

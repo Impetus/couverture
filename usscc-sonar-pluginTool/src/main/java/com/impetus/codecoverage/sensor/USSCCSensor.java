@@ -201,14 +201,21 @@ public class USSCCSensor implements Sensor {
                 USSCCMetrics.PROJECT_NAME, projectName));
     
    
-        if (s3AccessKey.isEmpty())
+        if (s3AccessKey == null ||s3AccessKey.isEmpty() )
+        {
+        	s3AccessKey="0";
         	sensorContext.saveMeasure(new Measure(
-                		USSCCMetrics.S3_ACCESKEY, ""));
-        else
+                		USSCCMetrics.S3_ACCESKEY, s3AccessKey));
+        	LOG.info("s3 access key$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ =" +s3AccessKey);
+        }
+        	else
+        	{
         	sensorContext.saveMeasure(new Measure(
             		USSCCMetrics.S3_ACCESKEY, s3AccessKey));
      	
-        LOG.info("s3 access key$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ =" +s3AccessKey);
+        	LOG.info("s3 access key$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ =" +s3AccessKey);
+        	}
+        
 		 
         if(s3AccessKey!=null && s3SecretKey!=null)
         {
