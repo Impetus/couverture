@@ -1,17 +1,17 @@
 ## Overview-
 
-> USSCC Tool calculates code coverage specific to the user stories we deliver.
+> Couverture calculates code coverage specific to the user stories we deliver.
 > This gives a clear picture in terms of percentage of code coverage for each user story.
 > And hence coverage result does not get diluted with usually low legacy code coverage or other user stories coverage.   
 
 > ## The tool is available in two forms:-
 
-> A. USSCC Sonar Plug-in. (folder name: usscc-sonar-pluginTool)
+> A. Sonar Plug-in. (folder name: usscc-sonar-pluginTool)
 
-> B. USSCC Command line Tool (folder name: code-coverag-tool)
+> B. Command line Tool (folder name: code-coverag-tool)
 
 
-A. USSCC Sonar Plug-in.
+A. Couverture Plug-in.
 
 
 
@@ -31,9 +31,9 @@ A. USSCC Sonar Plug-in.
 
 
 
-B. USSCC Command line Tool
+B. Couverture Command line Tool
 
->USSCC Tool is a command line version of USSCC Sonar Plug-in.
+>Couverture Command Line Tool is a command line version of Couverture Sonar Plug-in.
 
 
 >## Setup and follow below some supported step:
