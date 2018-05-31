@@ -6,7 +6,7 @@
 
 > ## The tool is available in two forms:-
 
-> A. Sonar Plug-in. (folder name: usscc-sonar-pluginTool)
+> A. Sonar Plug-in. (folder name: Coverture-pluginTool)
 
 > B. Command line Tool (folder name: code-coverag-tool)
 
@@ -17,16 +17,15 @@ A. Couverture Plug-in.
 
 > ## To run this tool with your Projects sonar setup, please follow the below steps:-
 > 1.   Make sure your project implement Jacoco or Cobertura and create Jacoco.xml or cobertura’s coverage.xml
->      (To know how to do this, please refer to documents in USSCC_DOCUMENT/implement coverage xml)
+>      (To know how to do this, please refer to documents in Coverture_DOCUMENT/implement coverage xml)
 > 2.   build your project to generate jacoco.xml or coverage.xml for your project
 > 3.   Tool is available as a Plugin to SonarQube. To generate sonar report with USSC tool follow these steps :-
->       * **Place USSC-plugin jar at sonarqube-X.X.X/extensions/plugins**
+>       * **Place Coverture-plugin jar at sonarqube-X.X.X/extensions/plugins**
 >       * **Start SonarQube server**
 >       * **Add it as widget to dashboard in sonar. At start of sprint, configure plugin with list of user stories in sprint scope.**
 >       * **Generate sonar report for your project with follwing command :**
                      **mvn sonar:sonar**
 > 4.   :+1: See Coverage Result on SonarQube Dashboard.     
-
 
 
 
@@ -49,4 +48,4 @@ B. Couverture Command line Tool
 
 > 4. :+1:See Coverage Result on console.
 
-For more details please go through presentation in USSCC_DOCUMENT\presentations
+For more details please go through presentation in Coverture_DOCUMENT\presentations

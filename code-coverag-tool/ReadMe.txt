@@ -1,5 +1,5 @@
 Overview: 
-         USSCC Tool calculates code coverage specific to the user stories we deliver.
+         Coverture Tool calculates code coverage specific to the user stories we deliver.
          This gives a clear picture in terms of percentage of code coverage for each user story.
          And hence coverage result does not get diluted with usually low legacy code coverage or other user stories coverage.   
 
@@ -20,7 +20,7 @@ For Jacoco :
        1.Go to the com. codecoverage.runner package and  run  to the RunCodeCoverage  java class.
          You have get such type of output
    Enter User Story Number, if multiple user Stories then please separate them       by comma (,)
-        Note: Please Enter usscc number like US-1234. If you have two user story number like US-1235, Us-1234
+        Note: Please Enter coverture number like US-1234. If you have two user story number like US-1235, Us-1234
        2. After entered you have to give a project location  
           Like Enter SRC/Code Location
           Note: entered your location like D:\svnCheckout
