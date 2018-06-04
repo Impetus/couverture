@@ -50,3 +50,233 @@
 2017-06-08 13:17:39 DEBUG RunCodeCoverage:172 - fileLineNoMap{/src/main/java/com/mkyong/core/App.java=[7, 8, 9, 10, 15, 16, 17, 18, 19, 20]}
 2017-06-08 13:17:39 INFO  ComputeSimpleUSCoverage:90 - calling getCoverageList
 2017-06-08 13:17:39 INFO  ComputeSimpleUSCoverage:283 - pathToProject in getCoverageList :: D:\svnCompileProject/target/site/cobertura/coverage.xml
+2018-06-01 11:29:33 DEBUG RunCodeCoverage:100 - USSCC: User story specific code coverage tool
+2018-06-01 11:29:47 DEBUG RunCodeCoverage:109 - userStory:US-1234
+2018-06-01 11:31:47 DEBUG RunCodeCoverage:113 - pathToSrc:D:\
+2018-06-01 11:31:47 INFO  RunCodeCoverage:125 - Coverage Project Type =null
+2018-06-01 11:32:05 DEBUG RunCodeCoverage:133 - coverageFor:git
+2018-06-01 11:32:09 DEBUG RunCodeCoverage:206 - coverageTool Option:2
+2018-06-01 11:32:14 INFO  MavenCoberturaRunner:49 - mvnDir=D:\apache-maven-2.0.9/bin/mvn.bat 
+2018-06-01 11:32:15 DEBUG RunCodeCoverage:161 - Going to get git Files and Lines to get Coverage for User-Story: US-1234
+
+
+2018-06-01 11:32:15 INFO  SimpleGITCodeCoverage:172 - commandToBeExecuted:: git --git-dir D:\/.git log --pretty=format:"revision="%H",%nauthor="%an",%nmessage="%s",%ndate="%cd"," --grep=US-1234 
+2018-06-01 11:32:16 INFO  SimpleGITCodeCoverage:188 - stdErrorfatal: not a git repository: 'D:\/.git'
+2018-06-01 11:32:16 INFO  SimpleGITCodeCoverage:193 - Logs Saved Successfully.....{}
+2018-06-01 11:32:16 DEBUG RunCodeCoverage:172 - fileLineNoMap{}
+2018-06-01 11:32:16 INFO  ComputeSimpleUSCoverage:89 - calling getCoverageListJaCoCo
+2018-06-01 11:32:16 DEBUG ComputeSimpleUSCoverage:390 - pathToProject in getCoverageListJaCoCo :: 
+2018-06-01 11:32:16 ERROR ComputeSimpleUSCoverage:440 - Excption occured in getCoverageListJaCoCo() method. []
+java.io.FileNotFoundException: 
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileReader.<init>(Unknown Source)
+	at com.impetus.codecoverage.runner.ComputeSimpleUSCoverage.getCoverageListJaCoCo(ComputeSimpleUSCoverage.java:395)
+	at com.impetus.codecoverage.runner.ComputeSimpleUSCoverage.getOverallCoverage(ComputeSimpleUSCoverage.java:90)
+	at com.impetus.codecoverage.runner.RunCodeCoverage.main(RunCodeCoverage.java:176)
+2018-06-01 12:05:08 DEBUG RunCodeCoverage:100 - USSCC: User story specific code coverage tool
+2018-06-01 12:05:26 DEBUG RunCodeCoverage:109 - userStory:US-1234
+2018-06-01 12:05:40 DEBUG RunCodeCoverage:113 - pathToSrc:C:\Users\shlok.shah\Documents\GitHub\code-coverage
+2018-06-01 12:05:40 INFO  RunCodeCoverage:125 - Coverage Project Type =git
+2018-06-01 12:05:48 DEBUG RunCodeCoverage:206 - coverageTool Option:2
+2018-06-01 12:05:48 INFO  MavenCoberturaRunner:49 - mvnDir=D:\apache-maven-2.0.9/bin/mvn.bat 
+2018-06-01 12:05:49 DEBUG RunCodeCoverage:161 - Going to get git Files and Lines to get Coverage for User-Story: US-1234
+
+
+2018-06-01 12:05:49 INFO  SimpleGITCodeCoverage:172 - commandToBeExecuted:: git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git log --pretty=format:"revision="%H",%nauthor="%an",%nmessage="%s",%ndate="%cd"," --grep=US-1234 
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:58 - revision: 98704b3814d6df8269b2177048d8dae23ef65532
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:83 - RevisionFileMap: {98704b3814d6df8269b2177048d8dae23ef65532=[src/test/java/com/mkyong/core/TestApp1.java]}
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:58 - revision: edc4200c15c4f5d71c3d7fd354649f90c09fccd1
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:83 - RevisionFileMap: {edc4200c15c4f5d71c3d7fd354649f90c09fccd1=[src/main/java/com/mkyong/core/App.java, src/main/java/com/mkyong/core/CopyOfApp.java, src/test/java/com/mkyong/core/TestApp1.java], 98704b3814d6df8269b2177048d8dae23ef65532=[src/test/java/com/mkyong/core/TestApp1.java]}
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:58 - revision: e9d0c2b80824c970723a5d875bed4eb8f522815b
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:83 - RevisionFileMap: {e9d0c2b80824c970723a5d875bed4eb8f522815b=[src/main/java/com/mkyong/core/Person.java], edc4200c15c4f5d71c3d7fd354649f90c09fccd1=[src/main/java/com/mkyong/core/App.java, src/main/java/com/mkyong/core/CopyOfApp.java, src/test/java/com/mkyong/core/TestApp1.java], 98704b3814d6df8269b2177048d8dae23ef65532=[src/test/java/com/mkyong/core/TestApp1.java]}
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:58 - revision: 87fbcbe7f5b2197aa34b1ef3ac107a31d33d34f5
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:83 - RevisionFileMap: {e9d0c2b80824c970723a5d875bed4eb8f522815b=[src/main/java/com/mkyong/core/Person.java], edc4200c15c4f5d71c3d7fd354649f90c09fccd1=[src/main/java/com/mkyong/core/App.java, src/main/java/com/mkyong/core/CopyOfApp.java, src/test/java/com/mkyong/core/TestApp1.java], 87fbcbe7f5b2197aa34b1ef3ac107a31d33d34f5=[src/main/java/com/mkyong/core/App.java], 98704b3814d6df8269b2177048d8dae23ef65532=[src/test/java/com/mkyong/core/TestApp1.java]}
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:193 - Logs Saved Successfully.....{e9d0c2b80824c970723a5d875bed4eb8f522815b=[src/main/java/com/mkyong/core/Person.java], edc4200c15c4f5d71c3d7fd354649f90c09fccd1=[src/main/java/com/mkyong/core/App.java, src/main/java/com/mkyong/core/CopyOfApp.java, src/test/java/com/mkyong/core/TestApp1.java], 87fbcbe7f5b2197aa34b1ef3ac107a31d33d34f5=[src/main/java/com/mkyong/core/App.java], 98704b3814d6df8269b2177048d8dae23ef65532=[src/test/java/com/mkyong/core/TestApp1.java]}
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:107 - commandToBeExecuted=git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git --work-tree=C:\Users\shlok.shah\Documents\GitHub\code-coverage blame -w --porcelain C:\Users\shlok.shah\Documents\GitHub\code-coverage/src/main/java/com/mkyong/core/Person.java
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=28
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:107 - commandToBeExecuted=git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git --work-tree=C:\Users\shlok.shah\Documents\GitHub\code-coverage blame -w --porcelain C:\Users\shlok.shah\Documents\GitHub\code-coverage/src/main/java/com/mkyong/core/App.java
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=9
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:107 - commandToBeExecuted=git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git --work-tree=C:\Users\shlok.shah\Documents\GitHub\code-coverage blame -w --porcelain C:\Users\shlok.shah\Documents\GitHub\code-coverage/src/main/java/com/mkyong/core/CopyOfApp.java
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=1
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=2
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=3
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=4
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=5
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=6
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=7
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=8
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=9
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=10
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=11
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=12
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=13
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=14
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=15
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=16
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=17
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=18
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=19
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=20
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=21
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=22
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=23
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:118 - a=24
+2018-06-01 12:05:50 INFO  SimpleGITCodeCoverage:107 - commandToBeExecuted=git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git --work-tree=C:\Users\shlok.shah\Documents\GitHub\code-coverage blame -w --porcelain C:\Users\shlok.shah\Documents\GitHub\code-coverage/src/test/java/com/mkyong/core/TestApp1.java
+2018-06-01 12:05:51 INFO  SimpleGITCodeCoverage:124 - stdErrorfatal: no such path 'src/test/java/com/mkyong/core/TestApp1.java' in HEAD
+2018-06-01 12:05:51 INFO  SimpleGITCodeCoverage:107 - commandToBeExecuted=git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git --work-tree=C:\Users\shlok.shah\Documents\GitHub\code-coverage blame -w --porcelain C:\Users\shlok.shah\Documents\GitHub\code-coverage/src/main/java/com/mkyong/core/App.java
+2018-06-01 12:05:51 INFO  SimpleGITCodeCoverage:118 - a=7
+2018-06-01 12:05:51 INFO  SimpleGITCodeCoverage:118 - a=8
+2018-06-01 12:05:51 INFO  SimpleGITCodeCoverage:118 - a=15
+2018-06-01 12:05:51 INFO  SimpleGITCodeCoverage:118 - a=16
+2018-06-01 12:05:51 INFO  SimpleGITCodeCoverage:118 - a=30
+2018-06-01 12:05:51 INFO  SimpleGITCodeCoverage:118 - a=31
+2018-06-01 12:05:51 INFO  SimpleGITCodeCoverage:107 - commandToBeExecuted=git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git --work-tree=C:\Users\shlok.shah\Documents\GitHub\code-coverage blame -w --porcelain C:\Users\shlok.shah\Documents\GitHub\code-coverage/src/test/java/com/mkyong/core/TestApp1.java
+2018-06-01 12:05:51 INFO  SimpleGITCodeCoverage:124 - stdErrorfatal: no such path 'src/test/java/com/mkyong/core/TestApp1.java' in HEAD
+2018-06-01 12:05:51 DEBUG RunCodeCoverage:172 - fileLineNoMap{src/main/java/com/mkyong/core/App.java=[30, 7, 31, 9, 15, 16, 8], src/main/java/com/mkyong/core/CopyOfApp.java=[19, 17, 18, 15, 16, 13, 14, 11, 12, 21, 20, 22, 23, 24, 3, 2, 10, 1, 7, 6, 5, 4, 9, 8], src/main/java/com/mkyong/core/Person.java=[28]}
+2018-06-01 12:05:51 INFO  ComputeSimpleUSCoverage:89 - calling getCoverageListJaCoCo
+2018-06-01 12:05:51 DEBUG ComputeSimpleUSCoverage:390 - pathToProject in getCoverageListJaCoCo :: 
+2018-06-01 12:05:51 ERROR ComputeSimpleUSCoverage:440 - Excption occured in getCoverageListJaCoCo() method. []
+java.io.FileNotFoundException: 
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileReader.<init>(Unknown Source)
+	at com.impetus.codecoverage.runner.ComputeSimpleUSCoverage.getCoverageListJaCoCo(ComputeSimpleUSCoverage.java:395)
+	at com.impetus.codecoverage.runner.ComputeSimpleUSCoverage.getOverallCoverage(ComputeSimpleUSCoverage.java:90)
+	at com.impetus.codecoverage.runner.RunCodeCoverage.main(RunCodeCoverage.java:176)
+2018-06-01 12:05:51 INFO  ComputeSimpleUSCoverage:149 - start : US-1234,App : -20
+2018-06-01 12:05:51 INFO  ComputeSimpleUSCoverage:149 - start : US-1234,CopyOfApp : -20
+2018-06-01 12:05:51 INFO  ComputeSimpleUSCoverage:149 - start : US-1234,Person : -20
+2018-06-01 12:06:35 DEBUG RunCodeCoverage:100 - USSCC: User story specific code coverage tool
+2018-06-01 12:06:39 DEBUG RunCodeCoverage:109 - userStory:US-1234
+2018-06-01 12:06:42 DEBUG RunCodeCoverage:113 - pathToSrc:C:\Users\shlok.shah\Documents\GitHub\code-coverage
+2018-06-01 12:06:42 INFO  RunCodeCoverage:125 - Coverage Project Type =git
+2018-06-01 12:06:47 DEBUG RunCodeCoverage:206 - coverageTool Option:1
+2018-06-01 12:06:47 DEBUG RunCodeCoverage:161 - Going to get git Files and Lines to get Coverage for User-Story: US-1234
+
+
+2018-06-01 12:06:47 INFO  SimpleGITCodeCoverage:172 - commandToBeExecuted:: git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git log --pretty=format:"revision="%H",%nauthor="%an",%nmessage="%s",%ndate="%cd"," --grep=US-1234 
+2018-06-01 12:06:47 INFO  SimpleGITCodeCoverage:58 - revision: 98704b3814d6df8269b2177048d8dae23ef65532
+2018-06-01 12:06:47 INFO  SimpleGITCodeCoverage:83 - RevisionFileMap: {98704b3814d6df8269b2177048d8dae23ef65532=[src/test/java/com/mkyong/core/TestApp1.java]}
+2018-06-01 12:06:47 INFO  SimpleGITCodeCoverage:58 - revision: edc4200c15c4f5d71c3d7fd354649f90c09fccd1
+2018-06-01 12:06:47 INFO  SimpleGITCodeCoverage:83 - RevisionFileMap: {edc4200c15c4f5d71c3d7fd354649f90c09fccd1=[src/main/java/com/mkyong/core/App.java, src/main/java/com/mkyong/core/CopyOfApp.java, src/test/java/com/mkyong/core/TestApp1.java], 98704b3814d6df8269b2177048d8dae23ef65532=[src/test/java/com/mkyong/core/TestApp1.java]}
+2018-06-01 12:06:47 INFO  SimpleGITCodeCoverage:58 - revision: e9d0c2b80824c970723a5d875bed4eb8f522815b
+2018-06-01 12:06:47 INFO  SimpleGITCodeCoverage:83 - RevisionFileMap: {e9d0c2b80824c970723a5d875bed4eb8f522815b=[src/main/java/com/mkyong/core/Person.java], edc4200c15c4f5d71c3d7fd354649f90c09fccd1=[src/main/java/com/mkyong/core/App.java, src/main/java/com/mkyong/core/CopyOfApp.java, src/test/java/com/mkyong/core/TestApp1.java], 98704b3814d6df8269b2177048d8dae23ef65532=[src/test/java/com/mkyong/core/TestApp1.java]}
+2018-06-01 12:06:47 INFO  SimpleGITCodeCoverage:58 - revision: 87fbcbe7f5b2197aa34b1ef3ac107a31d33d34f5
+2018-06-01 12:06:47 INFO  SimpleGITCodeCoverage:83 - RevisionFileMap: {e9d0c2b80824c970723a5d875bed4eb8f522815b=[src/main/java/com/mkyong/core/Person.java], edc4200c15c4f5d71c3d7fd354649f90c09fccd1=[src/main/java/com/mkyong/core/App.java, src/main/java/com/mkyong/core/CopyOfApp.java, src/test/java/com/mkyong/core/TestApp1.java], 87fbcbe7f5b2197aa34b1ef3ac107a31d33d34f5=[src/main/java/com/mkyong/core/App.java], 98704b3814d6df8269b2177048d8dae23ef65532=[src/test/java/com/mkyong/core/TestApp1.java]}
+2018-06-01 12:06:47 INFO  SimpleGITCodeCoverage:193 - Logs Saved Successfully.....{e9d0c2b80824c970723a5d875bed4eb8f522815b=[src/main/java/com/mkyong/core/Person.java], edc4200c15c4f5d71c3d7fd354649f90c09fccd1=[src/main/java/com/mkyong/core/App.java, src/main/java/com/mkyong/core/CopyOfApp.java, src/test/java/com/mkyong/core/TestApp1.java], 87fbcbe7f5b2197aa34b1ef3ac107a31d33d34f5=[src/main/java/com/mkyong/core/App.java], 98704b3814d6df8269b2177048d8dae23ef65532=[src/test/java/com/mkyong/core/TestApp1.java]}
+2018-06-01 12:06:47 INFO  SimpleGITCodeCoverage:107 - commandToBeExecuted=git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git --work-tree=C:\Users\shlok.shah\Documents\GitHub\code-coverage blame -w --porcelain C:\Users\shlok.shah\Documents\GitHub\code-coverage/src/main/java/com/mkyong/core/Person.java
+2018-06-01 12:06:47 INFO  SimpleGITCodeCoverage:118 - a=28
+2018-06-01 12:06:47 INFO  SimpleGITCodeCoverage:107 - commandToBeExecuted=git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git --work-tree=C:\Users\shlok.shah\Documents\GitHub\code-coverage blame -w --porcelain C:\Users\shlok.shah\Documents\GitHub\code-coverage/src/main/java/com/mkyong/core/App.java
+2018-06-01 12:06:47 INFO  SimpleGITCodeCoverage:118 - a=9
+2018-06-01 12:06:47 INFO  SimpleGITCodeCoverage:107 - commandToBeExecuted=git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git --work-tree=C:\Users\shlok.shah\Documents\GitHub\code-coverage blame -w --porcelain C:\Users\shlok.shah\Documents\GitHub\code-coverage/src/main/java/com/mkyong/core/CopyOfApp.java
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=1
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=2
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=3
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=4
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=5
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=6
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=7
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=8
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=9
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=10
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=11
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=12
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=13
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=14
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=15
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=16
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=17
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=18
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=19
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=20
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=21
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=22
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=23
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=24
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:107 - commandToBeExecuted=git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git --work-tree=C:\Users\shlok.shah\Documents\GitHub\code-coverage blame -w --porcelain C:\Users\shlok.shah\Documents\GitHub\code-coverage/src/test/java/com/mkyong/core/TestApp1.java
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:124 - stdErrorfatal: no such path 'src/test/java/com/mkyong/core/TestApp1.java' in HEAD
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:107 - commandToBeExecuted=git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git --work-tree=C:\Users\shlok.shah\Documents\GitHub\code-coverage blame -w --porcelain C:\Users\shlok.shah\Documents\GitHub\code-coverage/src/main/java/com/mkyong/core/App.java
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=7
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=8
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=15
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=16
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=30
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:118 - a=31
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:107 - commandToBeExecuted=git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git --work-tree=C:\Users\shlok.shah\Documents\GitHub\code-coverage blame -w --porcelain C:\Users\shlok.shah\Documents\GitHub\code-coverage/src/test/java/com/mkyong/core/TestApp1.java
+2018-06-01 12:06:48 INFO  SimpleGITCodeCoverage:124 - stdErrorfatal: no such path 'src/test/java/com/mkyong/core/TestApp1.java' in HEAD
+2018-06-01 12:06:48 DEBUG RunCodeCoverage:172 - fileLineNoMap{src/main/java/com/mkyong/core/App.java=[30, 7, 31, 9, 15, 16, 8], src/main/java/com/mkyong/core/CopyOfApp.java=[19, 17, 18, 15, 16, 13, 14, 11, 12, 21, 20, 22, 23, 24, 3, 2, 10, 1, 7, 6, 5, 4, 9, 8], src/main/java/com/mkyong/core/Person.java=[28]}
+2018-06-01 12:06:48 INFO  ComputeSimpleUSCoverage:92 - calling getCoverageList
+2018-06-01 12:06:48 INFO  ComputeSimpleUSCoverage:316 - pathToProject in getCoverageList :: C:\Users\shlok.shah\Documents\GitHub\code-coverage/target/site/cobertura/coverage.xml
+2018-06-01 12:06:49 INFO  ComputeSimpleUSCoverage:149 - start : US-1234,App : 7-8
+2018-06-01 12:06:49 INFO  ComputeSimpleUSCoverage:149 - start : US-1234,CopyOfApp : 3,6-8,10,13-15,20-21
+2018-06-01 12:06:49 INFO  ComputeSimpleUSCoverage:149 - start : US-1234,Person : 28
+2018-06-01 12:48:18 DEBUG RunCodeCoverage:100 - Couverture: Know you code coverage for user story
+2018-06-01 12:48:35 DEBUG RunCodeCoverage:109 - userStory:US-1234,US-3456
+2018-06-01 12:48:50 DEBUG RunCodeCoverage:113 - pathToSrc:C:\Users\shlok.shah\Documents\GitHub\code-coverage
+2018-06-01 12:48:50 INFO  RunCodeCoverage:125 - Coverage Project Type =git
+2018-06-01 12:48:55 DEBUG RunCodeCoverage:206 - coverageTool Option:1
+2018-06-01 12:48:55 DEBUG RunCodeCoverage:161 - Going to get git Files and Lines to get Coverage for User-Story: US-1234,US-3456
+
+
+2018-06-01 12:48:55 INFO  SimpleGITCodeCoverage:172 - commandToBeExecuted:: git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git log --pretty=format:"revision="%H",%nauthor="%an",%nmessage="%s",%ndate="%cd"," --grep=US-1234 
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:58 - revision: 98704b3814d6df8269b2177048d8dae23ef65532
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:83 - RevisionFileMap: {98704b3814d6df8269b2177048d8dae23ef65532=[src/test/java/com/mkyong/core/TestApp1.java]}
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:58 - revision: edc4200c15c4f5d71c3d7fd354649f90c09fccd1
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:83 - RevisionFileMap: {edc4200c15c4f5d71c3d7fd354649f90c09fccd1=[src/main/java/com/mkyong/core/App.java, src/main/java/com/mkyong/core/CopyOfApp.java, src/test/java/com/mkyong/core/TestApp1.java], 98704b3814d6df8269b2177048d8dae23ef65532=[src/test/java/com/mkyong/core/TestApp1.java]}
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:58 - revision: e9d0c2b80824c970723a5d875bed4eb8f522815b
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:83 - RevisionFileMap: {e9d0c2b80824c970723a5d875bed4eb8f522815b=[src/main/java/com/mkyong/core/Person.java], edc4200c15c4f5d71c3d7fd354649f90c09fccd1=[src/main/java/com/mkyong/core/App.java, src/main/java/com/mkyong/core/CopyOfApp.java, src/test/java/com/mkyong/core/TestApp1.java], 98704b3814d6df8269b2177048d8dae23ef65532=[src/test/java/com/mkyong/core/TestApp1.java]}
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:58 - revision: 87fbcbe7f5b2197aa34b1ef3ac107a31d33d34f5
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:83 - RevisionFileMap: {e9d0c2b80824c970723a5d875bed4eb8f522815b=[src/main/java/com/mkyong/core/Person.java], edc4200c15c4f5d71c3d7fd354649f90c09fccd1=[src/main/java/com/mkyong/core/App.java, src/main/java/com/mkyong/core/CopyOfApp.java, src/test/java/com/mkyong/core/TestApp1.java], 87fbcbe7f5b2197aa34b1ef3ac107a31d33d34f5=[src/main/java/com/mkyong/core/App.java], 98704b3814d6df8269b2177048d8dae23ef65532=[src/test/java/com/mkyong/core/TestApp1.java]}
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:193 - Logs Saved Successfully.....{e9d0c2b80824c970723a5d875bed4eb8f522815b=[src/main/java/com/mkyong/core/Person.java], edc4200c15c4f5d71c3d7fd354649f90c09fccd1=[src/main/java/com/mkyong/core/App.java, src/main/java/com/mkyong/core/CopyOfApp.java, src/test/java/com/mkyong/core/TestApp1.java], 87fbcbe7f5b2197aa34b1ef3ac107a31d33d34f5=[src/main/java/com/mkyong/core/App.java], 98704b3814d6df8269b2177048d8dae23ef65532=[src/test/java/com/mkyong/core/TestApp1.java]}
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:107 - commandToBeExecuted=git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git --work-tree=C:\Users\shlok.shah\Documents\GitHub\code-coverage blame -w --porcelain C:\Users\shlok.shah\Documents\GitHub\code-coverage/src/main/java/com/mkyong/core/Person.java
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=28
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:107 - commandToBeExecuted=git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git --work-tree=C:\Users\shlok.shah\Documents\GitHub\code-coverage blame -w --porcelain C:\Users\shlok.shah\Documents\GitHub\code-coverage/src/main/java/com/mkyong/core/App.java
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=9
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:107 - commandToBeExecuted=git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git --work-tree=C:\Users\shlok.shah\Documents\GitHub\code-coverage blame -w --porcelain C:\Users\shlok.shah\Documents\GitHub\code-coverage/src/main/java/com/mkyong/core/CopyOfApp.java
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=1
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=2
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=3
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=4
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=5
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=6
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=7
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=8
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=9
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=10
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=11
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=12
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=13
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=14
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=15
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=16
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=17
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=18
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=19
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=20
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=21
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=22
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=23
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:118 - a=24
+2018-06-01 12:48:56 INFO  SimpleGITCodeCoverage:107 - commandToBeExecuted=git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git --work-tree=C:\Users\shlok.shah\Documents\GitHub\code-coverage blame -w --porcelain C:\Users\shlok.shah\Documents\GitHub\code-coverage/src/test/java/com/mkyong/core/TestApp1.java
+2018-06-01 12:48:57 INFO  SimpleGITCodeCoverage:124 - stdErrorfatal: no such path 'src/test/java/com/mkyong/core/TestApp1.java' in HEAD
+2018-06-01 12:48:57 INFO  SimpleGITCodeCoverage:107 - commandToBeExecuted=git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git --work-tree=C:\Users\shlok.shah\Documents\GitHub\code-coverage blame -w --porcelain C:\Users\shlok.shah\Documents\GitHub\code-coverage/src/main/java/com/mkyong/core/App.java
+2018-06-01 12:48:57 INFO  SimpleGITCodeCoverage:118 - a=7
+2018-06-01 12:48:57 INFO  SimpleGITCodeCoverage:118 - a=8
+2018-06-01 12:48:57 INFO  SimpleGITCodeCoverage:118 - a=15
+2018-06-01 12:48:57 INFO  SimpleGITCodeCoverage:118 - a=16
+2018-06-01 12:48:57 INFO  SimpleGITCodeCoverage:118 - a=30
+2018-06-01 12:48:57 INFO  SimpleGITCodeCoverage:118 - a=31
+2018-06-01 12:48:57 INFO  SimpleGITCodeCoverage:107 - commandToBeExecuted=git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git --work-tree=C:\Users\shlok.shah\Documents\GitHub\code-coverage blame -w --porcelain C:\Users\shlok.shah\Documents\GitHub\code-coverage/src/test/java/com/mkyong/core/TestApp1.java
+2018-06-01 12:48:57 INFO  SimpleGITCodeCoverage:124 - stdErrorfatal: no such path 'src/test/java/com/mkyong/core/TestApp1.java' in HEAD
+2018-06-01 12:48:57 DEBUG RunCodeCoverage:172 - fileLineNoMap{src/main/java/com/mkyong/core/App.java=[30, 7, 31, 9, 15, 16, 8], src/main/java/com/mkyong/core/CopyOfApp.java=[19, 17, 18, 15, 16, 13, 14, 11, 12, 21, 20, 22, 23, 24, 3, 2, 10, 1, 7, 6, 5, 4, 9, 8], src/main/java/com/mkyong/core/Person.java=[28]}
+2018-06-01 12:48:57 INFO  ComputeSimpleUSCoverage:92 - calling getCoverageList
+2018-06-01 12:48:57 INFO  ComputeSimpleUSCoverage:316 - pathToProject in getCoverageList :: C:\Users\shlok.shah\Documents\GitHub\code-coverage/target/site/cobertura/coverage.xml
+2018-06-01 12:48:58 INFO  ComputeSimpleUSCoverage:149 - start : US-1234,App : 7-8
+2018-06-01 12:48:58 INFO  ComputeSimpleUSCoverage:149 - start : US-1234,CopyOfApp : 3,6-8,10,13-15,20-21
+2018-06-01 12:48:58 INFO  ComputeSimpleUSCoverage:149 - start : US-1234,Person : 28
+2018-06-01 12:48:58 INFO  SimpleGITCodeCoverage:172 - commandToBeExecuted:: git --git-dir C:\Users\shlok.shah\Documents\GitHub\code-coverage/.git log --pretty=format:"revision="%H",%nauthor="%an",%nmessage="%s",%ndate="%cd"," --grep=US-3456 
+2018-06-01 12:48:58 INFO  SimpleGITCodeCoverage:193 - Logs Saved Successfully.....{}
+2018-06-01 12:48:58 DEBUG RunCodeCoverage:172 - fileLineNoMap{}

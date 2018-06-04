@@ -97,9 +97,9 @@ public class RunCodeCoverage {
 	public static void main(String[] args) throws XMLStreamException,
 			IOException, InterruptedException {
 
-		LOGGER.debug("USSCC: User story specific code coverage tool");
+		LOGGER.debug("Couverture: Know you code coverage for user story");
 		
-		System.out.println("***** USSCC: User story specific code coverage tool *****");
+		System.out.println("***** Couverture: Know you code coverage for user story *****");
 
 		Scanner scan = new Scanner(System.in);
 

@@ -1,0 +1,17 @@
+com\impetus\codecoverage\sensor\USSCCSensor.class
+com\impetus\codecoverage\widget\USSCCFooter.class
+com\impetus\codecoverage\parser\SVNBlameStax.class
+com\impetus\codecoverage\parser\ClearcaseCodeCoverage.class
+com\impetus\codecoverage\parser\SVNCodeCoverage.class
+com\impetus\codecoverage\widget\USSCCRubyWidget.class
+com\impetus\codecoverage\runner\RunCodeCoverage.class
+com\impetus\codecoverage\parser\CodeCoverage.class
+com\impetus\codecoverage\parser\SimpleGITCodeCoverage.class
+com\impetus\codecoverage\runner\MavenCoberturaRunner.class
+com\impetus\codecoverage\plugin\USSCCPlugin.class
+com\impetus\codecoverage\plugin\USSCCMetrics.class
+com\impetus\codecoverage\runner\ComputeSimpleUSCoverage.class
+com\impetus\codecoverage\model\LogEntry.class
+com\impetus\codecoverage\model\Coverage.class
+com\impetus\codecoverage\model\BlameEntry.class
+com\impetus\codecoverage\runner\RunCodeCoverage$Finder.class

@@ -1,0 +1,16 @@
+C:\Users\shlok.shah\Documents\GitHub\couverture\Couverture-pluginTool\src\main\java\com\impetus\codecoverage\sensor\USSCCSensor.java
+C:\Users\shlok.shah\Documents\GitHub\couverture\Couverture-pluginTool\src\main\java\com\impetus\codecoverage\model\LogEntry.java
+C:\Users\shlok.shah\Documents\GitHub\couverture\Couverture-pluginTool\src\main\java\com\impetus\codecoverage\model\BlameEntry.java
+C:\Users\shlok.shah\Documents\GitHub\couverture\Couverture-pluginTool\src\main\java\com\impetus\codecoverage\runner\RunCodeCoverage.java
+C:\Users\shlok.shah\Documents\GitHub\couverture\Couverture-pluginTool\src\main\java\com\impetus\codecoverage\widget\USSCCRubyWidget.java
+C:\Users\shlok.shah\Documents\GitHub\couverture\Couverture-pluginTool\src\main\java\com\impetus\codecoverage\widget\USSCCFooter.java
+C:\Users\shlok.shah\Documents\GitHub\couverture\Couverture-pluginTool\src\main\java\com\impetus\codecoverage\parser\ClearcaseCodeCoverage.java
+C:\Users\shlok.shah\Documents\GitHub\couverture\Couverture-pluginTool\src\main\java\com\impetus\codecoverage\runner\MavenCoberturaRunner.java
+C:\Users\shlok.shah\Documents\GitHub\couverture\Couverture-pluginTool\src\main\java\com\impetus\codecoverage\runner\ComputeSimpleUSCoverage.java
+C:\Users\shlok.shah\Documents\GitHub\couverture\Couverture-pluginTool\src\main\java\com\impetus\codecoverage\parser\SVNCodeCoverage.java
+C:\Users\shlok.shah\Documents\GitHub\couverture\Couverture-pluginTool\src\main\java\com\impetus\codecoverage\parser\CodeCoverage.java
+C:\Users\shlok.shah\Documents\GitHub\couverture\Couverture-pluginTool\src\main\java\com\impetus\codecoverage\model\Coverage.java
+C:\Users\shlok.shah\Documents\GitHub\couverture\Couverture-pluginTool\src\main\java\com\impetus\codecoverage\plugin\USSCCMetrics.java
+C:\Users\shlok.shah\Documents\GitHub\couverture\Couverture-pluginTool\src\main\java\com\impetus\codecoverage\parser\SimpleGITCodeCoverage.java
+C:\Users\shlok.shah\Documents\GitHub\couverture\Couverture-pluginTool\src\main\java\com\impetus\codecoverage\parser\SVNBlameStax.java
+C:\Users\shlok.shah\Documents\GitHub\couverture\Couverture-pluginTool\src\main\java\com\impetus\codecoverage\plugin\USSCCPlugin.java
