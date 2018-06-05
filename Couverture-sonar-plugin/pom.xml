@@ -13,7 +13,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <sonar.buildVersion>4.5.2</sonar.buildVersion>
+    <sonar.buildVersion>3.7</sonar.buildVersion>
     <jdk.min.version>1.7</jdk.min.version>
   </properties>
   
@@ -48,6 +48,7 @@
        </pluginRepositories>
        
   <dependencies>
+	  <!-- https://mvnrepository.com/artifact/org.codehaus.sonar/sonar-maven-plugin -->
     <dependency>
         <groupId>com.atlassian.jira</groupId>
         <artifactId>jira-rest-java-client-api</artifactId>
@@ -59,10 +60,10 @@
         <version>3.0.0</version>
     </dependency>
     <dependency>
-      <groupId>org.codehaus.sonar</groupId>
-      <artifactId>sonar-plugin-api</artifactId>
-      <version>${sonar.buildVersion}</version>
-      <scope>provided</scope>
+		<groupId>org.codehaus.sonar</groupId>
+		<artifactId>sonar-plugin-api</artifactId>
+		<version>${sonar.buildVersion}</version>
+		<scope>provided</scope>
     </dependency>
 	<dependency>
 	    <groupId>com.google.code.gson</groupId>
