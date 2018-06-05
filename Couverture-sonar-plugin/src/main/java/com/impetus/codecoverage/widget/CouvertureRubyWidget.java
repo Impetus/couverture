@@ -7,12 +7,12 @@ import org.sonar.api.web.UserRole;
 import org.sonar.api.web.WidgetCategory;
 
 /**
- * The Class USSCCRubyWidget.
+ * The Class CouvertureRubyWidget.
  */
 @UserRole(UserRole.USER)
 @Description("Calculates and Show User Story Specific Code Coverage")
 @WidgetCategory("USSCC")
-public class USSCCRubyWidget extends AbstractRubyTemplate implements RubyRailsWidget {
+public class CouvertureRubyWidget extends AbstractRubyTemplate implements RubyRailsWidget {
 
     /* (non-Javadoc)
      * @see org.sonar.api.web.View#getId()

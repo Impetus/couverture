@@ -4,9 +4,9 @@ import org.sonar.api.web.Footer;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class USSCCFooter.
+ * The Class CouvertureFooter.
  */
-public final class USSCCFooter implements Footer {
+public final class CouvertureFooter implements Footer {
 
     /* (non-Javadoc)
      * @see org.sonar.api.web.Footer#getHtml()

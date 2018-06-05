@@ -1,6 +1,4 @@
-com\impetus\codecoverage\sensor\USSCCSensor.class
-com\impetus\codecoverage\widget\USSCCFooter.class
-com\impetus\codecoverage\widget\USSCCRubyWidget.class
+com\impetus\codecoverage\sensor\CouvertureSensor.class
 com\impetus\codecoverage\runner\RunCodeCoverage.class
 com\impetus\codecoverage\parser\CodeCoverage.class
 com\impetus\codecoverage\runner\ComputeSimpleUSCoverage.class

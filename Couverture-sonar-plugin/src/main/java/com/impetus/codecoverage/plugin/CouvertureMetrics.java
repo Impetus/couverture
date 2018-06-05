@@ -10,7 +10,7 @@ import org.sonar.api.measures.Metrics;
 /**
  * The Class USSCCMetrics.
  */
-public final class USSCCMetrics implements Metrics {
+public final class CouvertureMetrics implements Metrics {
 	
     /** The Constant NOTCOVERED_USER_STORIES. */
     public static final Metric NOTCOVERED_USER_STORIES = new Metric.Builder("notcovered_user_stories", "not covered user stories", Metric.ValueType.STRING)

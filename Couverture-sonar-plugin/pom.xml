@@ -134,7 +134,7 @@
 				<version>1.12.1</version>
 				<extensions>true</extensions>
 				<configuration>
-					<pluginClass>com.impetus.codecoverage.plugin.USSCCPlugin</pluginClass>
+					<pluginClass>com.impetus.codecoverage.plugin.CouverturePlugin</pluginClass>
 				</configuration>
 			</plugin>
 			<plugin>

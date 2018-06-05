@@ -34,8 +34,8 @@ import com.atlassian.util.concurrent.Promise;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.impetus.codecoverage.plugin.USSCCMetrics;
-import com.impetus.codecoverage.plugin.USSCCPlugin;
+import com.impetus.codecoverage.plugin.CouvertureMetrics;
+import com.impetus.codecoverage.plugin.CouverturePlugin;
 import com.impetus.codecoverage.runner.ComputeSimpleUSCoverage;
 import com.impetus.codecoverage.runner.RunCodeCoverage;
 import com.rallydev.rest.RallyRestApi;
@@ -45,13 +45,13 @@ import com.rallydev.rest.util.Fetch;
 import com.rallydev.rest.util.QueryFilter;
 
 /**
- * The Class USSCCSensor is used for get userstory code coverage jira.
+ * The Class CouvertureSensor is used for get userstory code coverage jira.
  */
-public class USSCCSensor implements Sensor {
+public class CouvertureSensor implements Sensor {
 
 	/** The Constant LOG. */
 	private static final Logger LOG = LoggerFactory
-			.getLogger(USSCCSensor.class);
+			.getLogger(CouvertureSensor.class);
 
 	/** The scan. */
 	Scanner scan = new Scanner(System.in);
@@ -79,7 +79,7 @@ public class USSCCSensor implements Sensor {
 	 *
 	 * @param settings the settings
 	 */
-	public USSCCSensor(Settings settings) {
+	public CouvertureSensor(Settings settings) {
 		this.settings = settings;
 	}
 
@@ -101,15 +101,15 @@ public class USSCCSensor implements Sensor {
 		String getDirec = settings.getString("sonar.projectBaseDir");
 		LOG.info("Comment below line and uncomment String coverageFor = null... in case there is already git in sonar and project is SVN");
 		String coverageFor = settings.getString("sonar.scm.provider");
-		String userStory = settings.getString(USSCCPlugin.USER_STORY);
-		String rallyKey = settings.getString(USSCCPlugin.RALLY_KEY);
-		String JIRAURL = settings.getString(USSCCPlugin.JIRA_URL);
-		String releaseId = settings.getString(USSCCPlugin.RALLY_RELEASE);
-		String JiraLogin = settings.getString(USSCCPlugin.JIRA_LOGIN);
-		String JIRAPassword = settings.getString(USSCCPlugin.JIRA_PASSWORD);
-		String JIRAJQL = settings.getString(USSCCPlugin.JIRA_JQL);
-		String s3AccessKey=settings.getString(USSCCPlugin.S3_ACCESSKEY);
-		String s3SecretKey=settings.getString(USSCCPlugin.S3_SECRETKEY);
+		String userStory = settings.getString(CouverturePlugin.USER_STORY);
+		String rallyKey = settings.getString(CouverturePlugin.RALLY_KEY);
+		String JIRAURL = settings.getString(CouverturePlugin.JIRA_URL);
+		String releaseId = settings.getString(CouverturePlugin.RALLY_RELEASE);
+		String JiraLogin = settings.getString(CouverturePlugin.JIRA_LOGIN);
+		String JIRAPassword = settings.getString(CouverturePlugin.JIRA_PASSWORD);
+		String JIRAJQL = settings.getString(CouverturePlugin.JIRA_JQL);
+		String s3AccessKey=settings.getString(CouverturePlugin.S3_ACCESSKEY);
+		String s3SecretKey=settings.getString(CouverturePlugin.S3_SECRETKEY);
 		
 		
 		String os = settings.getString("sun.desktop");
@@ -180,15 +180,15 @@ public class USSCCSensor implements Sensor {
 					
 		LOG.info("coverage.buildData() =" +coverage.buildData());
 		sensorContext.saveMeasure(new Measure(
-				USSCCMetrics.RESULT_COVERAGE_MAP, coverage.buildData()));
+				CouvertureMetrics.RESULT_COVERAGE_MAP, coverage.buildData()));
 		
 		LOG.info("Not covered stories "+RunCodeCoverage.getNotCoveredUserStories());
 		sensorContext.saveMeasure(new Measure(
-				USSCCMetrics.NOTCOVERED_USER_STORIES, RunCodeCoverage.getNotCoveredUserStories()));
+				CouvertureMetrics.NOTCOVERED_USER_STORIES, RunCodeCoverage.getNotCoveredUserStories()));
 		
 		LOG.info("notCoveredLines.buildData() =" + notCoveredLines.buildData());
 		sensorContext.saveMeasure(new Measure(
-				USSCCMetrics.NOTCOVERED_LINES, notCoveredLines.buildData()));
+				CouvertureMetrics.NOTCOVERED_LINES, notCoveredLines.buildData()));
 		
 		String projectName = getProjectName(getDirec);
 		
@@ -198,20 +198,20 @@ public class USSCCSensor implements Sensor {
 			projectName = UUID.randomUUID().toString();
         
         sensorContext.saveMeasure(new Measure(
-                USSCCMetrics.PROJECT_NAME, projectName));
+                CouvertureMetrics.PROJECT_NAME, projectName));
     
    
         if (s3AccessKey == null ||s3AccessKey.isEmpty() )
         {
         	s3AccessKey="0";
         	sensorContext.saveMeasure(new Measure(
-                		USSCCMetrics.S3_ACCESKEY, s3AccessKey));
+                		CouvertureMetrics.S3_ACCESKEY, s3AccessKey));
         	LOG.info("s3 access key$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ =" +s3AccessKey);
         }
         	else
         	{
         	sensorContext.saveMeasure(new Measure(
-            		USSCCMetrics.S3_ACCESKEY, s3AccessKey));
+            		CouvertureMetrics.S3_ACCESKEY, s3AccessKey));
      	
         	LOG.info("s3 access key$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ =" +s3AccessKey);
         	}

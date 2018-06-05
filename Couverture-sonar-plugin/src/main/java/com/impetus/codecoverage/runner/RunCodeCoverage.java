@@ -21,7 +21,6 @@ import com.impetus.codecoverage.parser.ClearcaseCodeCoverage;
 import com.impetus.codecoverage.parser.CodeCoverage;
 import com.impetus.codecoverage.parser.SVNCodeCoverage;
 import com.impetus.codecoverage.parser.SimpleGITCodeCoverage;
-import com.impetus.codecoverage.runner.RunCodeCoverage.Finder;
 
 
 // TODO: Auto-generated Javadoc
