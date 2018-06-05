@@ -13,12 +13,12 @@ import org.sonar.api.measures.Metrics;
 public final class USSCCMetrics implements Metrics {
 	
     /** The Constant NOTCOVERED_USER_STORIES. */
-    public static final Metric<String> NOTCOVERED_USER_STORIES = new Metric.Builder("notcovered_user_stories", "not covered user stories", Metric.ValueType.STRING)
+    public static final Metric NOTCOVERED_USER_STORIES = new Metric.Builder("notcovered_user_stories", "not covered user stories", Metric.ValueType.STRING)
             .setDescription("This is a metric to store not covered user stories").setQualitative(false)
             .setDomain(CoreMetrics.DOMAIN_GENERAL).create();
     
     /** The Constant NOTCOVERED_LINES. */
-    public static final Metric<String> NOTCOVERED_LINES = new Metric.Builder("notcovered_line", "not covered lines", Metric.ValueType.DATA)
+    public static final Metric NOTCOVERED_LINES = new Metric.Builder("notcovered_line", "not covered lines", Metric.ValueType.DATA)
             .setDescription("This is a metric to store not covered lines of code").setQualitative(false)
             .setDomain(CoreMetrics.DOMAIN_GENERAL).create();
 
